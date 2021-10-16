@@ -29,5 +29,5 @@ Hence, artificial intelligence is being used to benefit for peacebuilding, ensur
 ### Technology Stack
 
   - Python
-  - SkLearn
-  - Tensorflow
+  - Scikit-learn
+  - TensorFlow
