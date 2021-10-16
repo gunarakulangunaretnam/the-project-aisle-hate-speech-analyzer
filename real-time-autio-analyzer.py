@@ -1,6 +1,8 @@
 import os
 import speech_recognition as sr
 
+speech_recognizer = sr.Recognizer()
+
 knowledgebase = []
 
 def database_loader():
@@ -11,25 +13,34 @@ def database_loader():
 	    word = line.strip()
 	    knowledgebase.append(word)
 
+
 def speech_to_text():
+    with sr.Microphone() as source:
+        print("Listening...")
+        speech_recognizer.pause_threshold = 1
+        audio = speech_recognizer.listen(source, phrase_time_limit=10) # phrase_time_limit=10
+
+        try:
+            print("Recognizing...") 
+            text = speech_recognizer.recognize_google(audio)
+            return text
+
+        except Exception as e:
+	        print(e)
+
+
+
+
+def main_function():
 
     while True:
-        r = sr.Recognizer()
-        with sr.Microphone() as source:
-	        print("Listening...")
-	       	r.pause_threshold = 1
-	        audio = r.listen(source)
-	        #audio = r.listen(source, phrase_time_limit=10) # Set listening time limit.
+    	print(speech_to_text())
 
-	        try:
-	            text = r.recognize_google(audio)
-	            print("Recognizing...")  
-	            print(text)
 
-	        except Exception as e:
-	            print(e)
+
+
 
 
 if __name__ == "__main__": 
     database_loader()
-    speech_to_text()
+    main_function()
