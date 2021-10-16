@@ -1,6 +1,16 @@
 import os
+import mysql.connector
+from datetime import datetime
 import speech_recognition as sr
 from happytransformer import HappyTextClassification
+
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="",
+  database="the-project-aisle"
+)
 
 
 happy_tc = HappyTextClassification("BERT", "Hate-speech-CNERG/dehatebert-mono-english")
@@ -33,11 +43,32 @@ def speech_to_text():
 	        print(e)
 
 
-def hate_speech_detector_model(text, hate_words):
+def hate_speech_classification(text, hate_words):
+
 	result = happy_tc.classify_text(text)
-	print(result)
-	print(result.label)
-	print(result.score)
+
+	now = datetime.now()
+	currentTime = now.strftime("%I:%M:%S %p")
+	currentDate = datetime.today().strftime('%Y-%m-%d')
+
+	hate_words_list_str = ""
+
+	for index, word in enumerate(hate_words):
+		
+		if index == 0:
+			hate_words_list_str = hate_words_list_str + word
+		else:
+			hate_words_list_str = hate_words_list_str+" | " + word
+
+	text = text.replace("'","") # Replace ' with nothing to fix the issue.
+
+	insert_cursor = mydb.cursor()
+	sqlCode = "INSERT INTO real_time_data VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}')".format("", str(text), hate_words_list_str , currentDate, currentTime, result.label, result.score)
+	insert_cursor.execute(sqlCode)
+	mydb.commit()
+
+	print("Data inserted!")
+
 
 
 def hate_word_filtter(text):
@@ -47,9 +78,7 @@ def hate_word_filtter(text):
 			hate_words.append(word)
 
 	if len(hate_words) > 0:
-		hate_speech_detector_model(text, hate_words)
-
-
+		hate_speech_classification(text, hate_words)
 
 
 def main_function():
