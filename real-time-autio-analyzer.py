@@ -1,5 +1,9 @@
 import os
 import speech_recognition as sr
+from happytransformer import HappyTextClassification
+
+
+happy_tc = HappyTextClassification("BERT", "Hate-speech-CNERG/dehatebert-mono-english")
 
 speech_recognizer = sr.Recognizer()
 
@@ -29,14 +33,22 @@ def speech_to_text():
 	        print(e)
 
 
+def hate_speech_detector_model(text, hate_words):
+	result = happy_tc.classify_text(text)
+	print(result)
+	print(result.label)
+	print(result.score)
+
 
 def hate_word_filtter(text):
 	hate_words = []
 	for word in knowledgebase:
 		if word in text:
 			hate_words.append(word)
-	print(text)
-	print(hate_words)
+
+	if len(hate_words) > 0:
+		hate_speech_detector_model(text, hate_words)
+
 
 
 
