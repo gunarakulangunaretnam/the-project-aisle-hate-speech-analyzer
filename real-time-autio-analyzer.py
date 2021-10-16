@@ -10,7 +10,7 @@ def database_loader():
 	with open('database/knowledgebase.txt') as f:
 	  
 	  for index, line in enumerate(f):
-	    word = line.strip()
+	    word = line.strip().lower()
 	    knowledgebase.append(word)
 
 
@@ -30,14 +30,24 @@ def speech_to_text():
 
 
 
+def hate_word_filtter(text):
+	hate_words = []
+	for word in knowledgebase:
+		if word in text:
+			hate_words.append(word)
+	print(text)
+	print(hate_words)
+
+
 
 def main_function():
 
     while True:
-    	print(speech_to_text())
-
-
-
+    	
+    	text = speech_to_text()
+    	
+    	if text != "" and text != None:
+    		hate_word_filtter(text)
 
 
 
