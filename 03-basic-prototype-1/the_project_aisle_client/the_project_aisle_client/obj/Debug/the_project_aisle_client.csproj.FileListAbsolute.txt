@@ -1,0 +1,12 @@
+C:\Users\Gunarakulan\Documents\Visual Studio 2015\Projects\the_project_aisle_client\the_project_aisle_client\bin\Debug\the_project_aisle_client.exe.config
+C:\Users\Gunarakulan\Documents\Visual Studio 2015\Projects\the_project_aisle_client\the_project_aisle_client\bin\Debug\the_project_aisle_client.exe
+C:\Users\Gunarakulan\Documents\Visual Studio 2015\Projects\the_project_aisle_client\the_project_aisle_client\bin\Debug\the_project_aisle_client.pdb
+C:\Users\Gunarakulan\Documents\Visual Studio 2015\Projects\the_project_aisle_client\the_project_aisle_client\obj\Debug\the_project_aisle_client.csprojResolveAssemblyReference.cache
+C:\Users\Gunarakulan\Documents\Visual Studio 2015\Projects\the_project_aisle_client\the_project_aisle_client\obj\Debug\the_project_aisle_client.MainForm.resources
+C:\Users\Gunarakulan\Documents\Visual Studio 2015\Projects\the_project_aisle_client\the_project_aisle_client\obj\Debug\the_project_aisle_client.Properties.Resources.resources
+C:\Users\Gunarakulan\Documents\Visual Studio 2015\Projects\the_project_aisle_client\the_project_aisle_client\obj\Debug\the_project_aisle_client.csproj.GenerateResource.Cache
+C:\Users\Gunarakulan\Documents\Visual Studio 2015\Projects\the_project_aisle_client\the_project_aisle_client\obj\Debug\the_project_aisle_client.exe
+C:\Users\Gunarakulan\Documents\Visual Studio 2015\Projects\the_project_aisle_client\the_project_aisle_client\obj\Debug\the_project_aisle_client.pdb
+C:\Users\Gunarakulan\Desktop\the-project-aisle\03-basic-prototype-1\the_project_aisle_client\the_project_aisle_client\bin\Debug\the_project_aisle_client.exe.config
+C:\Users\Gunarakulan\Desktop\the-project-aisle\03-basic-prototype-1\the_project_aisle_client\the_project_aisle_client\obj\Debug\the_project_aisle_client.exe
+C:\Users\Gunarakulan\Desktop\the-project-aisle\03-basic-prototype-1\the_project_aisle_client\the_project_aisle_client\obj\Debug\the_project_aisle_client.pdb
