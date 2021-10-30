@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,12 +50,25 @@
             this.panel4.Size = new System.Drawing.Size(1325, 57);
             this.panel4.TabIndex = 11;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.Location = new System.Drawing.Point(1228, 6);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 37);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "_";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(1274, 15);
+            this.label1.Location = new System.Drawing.Point(1274, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 37);
@@ -86,18 +99,6 @@
             this.label4.Size = new System.Drawing.Size(259, 37);
             this.label4.TabIndex = 0;
             this.label4.Text = "The Project AISLE";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label2.Location = new System.Drawing.Point(1228, 8);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 37);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "_";
             // 
             // MainForm
             // 
