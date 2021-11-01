@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadingScreen));
             this.label2 = new System.Windows.Forms.Label();
             this.splash_screen_progressbar = new Bunifu.Framework.UI.BunifuProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -88,6 +89,7 @@
             this.Controls.Add(this.splash_screen_progressbar);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoadingScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoadingScreen";
