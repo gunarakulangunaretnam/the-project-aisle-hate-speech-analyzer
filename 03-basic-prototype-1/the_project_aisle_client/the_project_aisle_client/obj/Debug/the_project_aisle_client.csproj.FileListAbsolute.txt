@@ -28,3 +28,4 @@ C:\Users\Gunarakulan\Desktop\the-project-aisle\03-basic-prototype-1\the_project_
 C:\Users\Gunarakulan\Desktop\the-project-aisle\03-basic-prototype-1\the_project_aisle_client\the_project_aisle_client\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\Gunarakulan\Desktop\the-project-aisle\03-basic-prototype-1\the_project_aisle_client\the_project_aisle_client\bin\Debug\MySql.Data.xml
 C:\Users\Gunarakulan\Desktop\the-project-aisle\03-basic-prototype-1\the_project_aisle_client\the_project_aisle_client\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Gunarakulan\Desktop\the-project-aisle\03-basic-prototype-1\the_project_aisle_client\the_project_aisle_client\obj\Debug\the_project_aisle_client.LoadingScreen.resources

@@ -16,7 +16,7 @@ namespace the_project_aisle_client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new LoadingScreen());
         }
     }
 }
