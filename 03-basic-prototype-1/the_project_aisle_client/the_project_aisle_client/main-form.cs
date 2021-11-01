@@ -14,7 +14,7 @@ namespace the_project_aisle_client
     public partial class MainForm : Form
     {
 
-        string selectedIndex = "";
+        string selectedRowIndex = "";
 
         curd_function curdOpearation = new curd_function();
 
@@ -134,21 +134,32 @@ namespace the_project_aisle_client
         private void button1_Click(object sender, EventArgs e)
         {
            
-            if (selectedIndex == "")
+            if (selectedRowIndex == "")
             {
                 MessageBox.Show("Please select a media to start the process.");
             }
             else {
 
-               
+                string url = bunifuCustomDataGrid1.Rows[Convert.ToInt32(selectedRowIndex)].Cells[4].Value.ToString();
+            
+                var psi = new System.Diagnostics.ProcessStartInfo();
+                psi.UseShellExecute = true;
+                psi.FileName = url;
+                System.Diagnostics.Process.Start(psi);
+
+                this.WindowState = FormWindowState.Minimized;
+
+
+
             }
         }
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedIndex = bunifuCustomDataGrid1.CurrentCell.Value.ToString();
+            selectedRowIndex = bunifuCustomDataGrid1.CurrentCell.RowIndex.ToString();
+           
         }
 
-        
+
     }
 }
