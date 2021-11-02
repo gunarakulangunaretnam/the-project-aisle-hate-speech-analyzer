@@ -58,9 +58,11 @@ class UserController extends Controller
 
     }
 
-    public function ViewDashboardPageController(){
 
-      return "Dashboard";
+    public function HandleLogout(){
+
+      Session::flush();
+      return Redirect('/');
 
     }
 

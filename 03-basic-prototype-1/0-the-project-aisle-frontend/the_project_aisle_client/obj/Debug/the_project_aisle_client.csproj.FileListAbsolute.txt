@@ -29,3 +29,6 @@ C:\Users\Gunarakulan\Desktop\the-project-aisle\03-basic-prototype-1\the_project_
 C:\Users\Gunarakulan\Desktop\the-project-aisle\03-basic-prototype-1\the_project_aisle_client\the_project_aisle_client\bin\Debug\MySql.Data.xml
 C:\Users\Gunarakulan\Desktop\the-project-aisle\03-basic-prototype-1\the_project_aisle_client\the_project_aisle_client\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Users\Gunarakulan\Desktop\the-project-aisle\03-basic-prototype-1\the_project_aisle_client\the_project_aisle_client\obj\Debug\the_project_aisle_client.LoadingScreen.resources
+C:\xampp\htdocs\the-project-aisle\03-basic-prototype-1\0-the-project-aisle-frontend\the_project_aisle_client\bin\Debug\the_project_aisle_client.exe.config
+C:\xampp\htdocs\the-project-aisle\03-basic-prototype-1\0-the-project-aisle-frontend\the_project_aisle_client\obj\Debug\the_project_aisle_client.exe
+C:\xampp\htdocs\the-project-aisle\03-basic-prototype-1\0-the-project-aisle-frontend\the_project_aisle_client\obj\Debug\the_project_aisle_client.pdb

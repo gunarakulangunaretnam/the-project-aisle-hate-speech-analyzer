@@ -18,5 +18,20 @@ class PageController extends Controller
 
     }
 
+    public function ViewDashboardPageController(){
+
+      $session_type = Session::get('Session_Type');
+
+      if($session_type == "Admin"){
+
+        return view('dashboard/index');
+
+      }else{
+
+        return Redirect::to("/");
+
+      }
+
+    }
 
 }

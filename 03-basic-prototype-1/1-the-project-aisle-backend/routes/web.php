@@ -19,4 +19,6 @@ Route::get('/',[PageController::class, 'ViewLoginPageController']);
 
 Route::POST('/handle-login', [UserController::class, 'HandleLogin']);
 
-Route::GET('/view-dashboard', [UserController::class, 'ViewDashboardPageController']);
+Route::GET('/handle-logout', [UserController::class, 'HandleLogout']);
+
+Route::GET('/view-dashboard', [PageController::class, 'ViewDashboardPageController']);
