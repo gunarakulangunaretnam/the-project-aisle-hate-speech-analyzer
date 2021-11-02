@@ -27,8 +27,8 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="{{asset('dashboard-page-asset')}}/images/logo.png" style="width: 150px; height: 46px;" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('dashboard-page-asset')}}/images/logo-mini.png" style="width: 40px;" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="/view-dashboard"><img src="{{asset('dashboard-page-asset')}}/images/logo.png" style="width: 150px; height: 46px;" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="/view-dashboard"><img src="{{asset('dashboard-page-asset')}}/images/logo-mini.png" style="width: 40px;" alt="logo"/></a>
       </div>
 
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -43,103 +43,12 @@
     </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-    
-      <div id="right-sidebar" class="settings-panel">
-        <i class="settings-close ti-close"></i>
-        <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
-          </li>
-        </ul>
-        <div class="tab-content" id="setting-content">
-          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
-            <div class="add-items d-flex px-3 mb-0">
-              <form class="form w-100">
-                <div class="form-group d-flex">
-                  <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
-                  <button type="submit" class="add btn btn-primary todo-list-add-btn" id="add-task">Add</button>
-                </div>
-              </form>
-            </div>
-            <div class="list-wrapper px-3">
-              <ul class="d-flex flex-column-reverse todo-list">
-                <li>
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="checkbox" type="checkbox">
-                      Team review meeting at 3.00 PM
-                    </label>
-                  </div>
-                  <i class="remove ti-close"></i>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="checkbox" type="checkbox">
-                      Prepare for presentation
-                    </label>
-                  </div>
-                  <i class="remove ti-close"></i>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="checkbox" type="checkbox">
-                      Resolve all the low priority tickets due today
-                    </label>
-                  </div>
-                  <i class="remove ti-close"></i>
-                </li>
-                <li class="completed">
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="checkbox" type="checkbox" checked>
-                      Schedule meeting for next week
-                    </label>
-                  </div>
-                  <i class="remove ti-close"></i>
-                </li>
-                <li class="completed">
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="checkbox" type="checkbox" checked>
-                      Project review
-                    </label>
-                  </div>
-                  <i class="remove ti-close"></i>
-                </li>
-              </ul>
-            </div>
-            <h4 class="px-3 text-muted mt-5 font-weight-light mb-0">Events</h4>
-            <div class="events pt-4 px-3">
-              <div class="wrapper d-flex mb-2">
-                <i class="ti-control-record text-primary mr-2"></i>
-                <span>Feb 11 2018</span>
-              </div>
-              <p class="mb-0 font-weight-thin text-gray">Creating component page build a js</p>
-              <p class="text-gray mb-0">The total number of sessions</p>
-            </div>
-            <div class="events pt-4 px-3">
-              <div class="wrapper d-flex mb-2">
-                <i class="ti-control-record text-primary mr-2"></i>
-                <span>Feb 7 2018</span>
-              </div>
-              <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
-              <p class="text-gray mb-0 ">Call Sarah Graves</p>
-            </div>
-          </div>
-          <!-- chat tab ends -->
-        </div>
-      </div>
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/view-dashboard">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -188,19 +97,435 @@
       </nav>
       <!-- partial -->
       <div class="main-panel">
-       
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-           <p style="text-align: center;">Copyright © <a href="https://dreamspace.academy/pages/1-0-index.php" target="_blank">DreamSpace Academy</a> | All Rights Reserved |  Co-created by <a href="https://www.linkedin.com/in/gunarakulan-gunaratnam-161119156/" target="_blank">Gunarakulan Gunaratnam</a></p>
-        </footer>
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
+        
+
+        <div class="row" style="margin-top:2%; margin-left:2%; margin-right:2%;">
+
+        <div class="col-md-4 stretch-card grid-margin">
+              <div class="card" style="background-color:#ebeff5;">
+                <div class="card-body">
+                  
+                <p class="card-title" style="text-align:center;">Top 10 Hate Speech Spreaders</p>
+                 
+                  <hr>
+                 
+                  <ul class="icon-data-list" style="width:100%;">
+
+                    <li>
+                      <div class="d-flex">
+                        <img src="{{asset('dashboard-page-asset')}}/images/faces/face1.jpg" alt="user">
+                        <div style="width:100%;">
+
+                          <p class="text-info mb-1">Isabella Becker  (No: 01)</p>
+
+                            <div class="progress progress-md flex-grow-1 mr-12">
+                                    <div class="progress-bar bg-inf0" role="progressbar" style="width: 100%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0" style="margin-top:1%;">140 (Times)</p>
+                         
+
+                        </div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class="d-flex">
+                        <img src="{{asset('dashboard-page-asset')}}/images/faces/face1.jpg" alt="user">
+                        <div style="width:100%;">
+
+                          <p class="text-info mb-1">Isabella Becker  (No: 01)</p>
+
+                            <div class="progress progress-md flex-grow-1 mr-12">
+                                    <div class="progress-bar bg-inf0" role="progressbar" style="width: 100%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0" style="margin-top:1%;">140 (Times)</p>
+                         
+
+                        </div>
+                      </div>
+                    </li>
+
+
+                    <li>
+                      <div class="d-flex">
+                        <img src="{{asset('dashboard-page-asset')}}/images/faces/face1.jpg" alt="user">
+                        <div style="width:100%;">
+
+                          <p class="text-info mb-1">Isabella Becker  (No: 01)</p>
+
+                            <div class="progress progress-md flex-grow-1 mr-12">
+                                    <div class="progress-bar bg-inf0" role="progressbar" style="width: 100%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0" style="margin-top:1%;">140 (Times)</p>
+                         
+
+                        </div>
+                      </div>
+                    </li>
+
+
+                    <li>
+                      <div class="d-flex">
+                        <img src="{{asset('dashboard-page-asset')}}/images/faces/face1.jpg" alt="user">
+                        <div style="width:100%;">
+
+                          <p class="text-info mb-1">Isabella Becker  (No: 01)</p>
+
+                            <div class="progress progress-md flex-grow-1 mr-12">
+                                    <div class="progress-bar bg-inf0" role="progressbar" style="width: 100%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0" style="margin-top:1%;">140 (Times)</p>
+                         
+
+                        </div>
+                      </div>
+                    </li>
+
+
+                    <li>
+                      <div class="d-flex">
+                        <img src="{{asset('dashboard-page-asset')}}/images/faces/face1.jpg" alt="user">
+                        <div style="width:100%;">
+
+                          <p class="text-info mb-1">Isabella Becker  (No: 01)</p>
+
+                            <div class="progress progress-md flex-grow-1 mr-12">
+                                    <div class="progress-bar bg-inf0" role="progressbar" style="width: 100%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0" style="margin-top:1%;">140 (Times)</p>
+                         
+
+                        </div>
+                      </div>
+                    </li>
+
+
+                    <li>
+                      <div class="d-flex">
+                        <img src="{{asset('dashboard-page-asset')}}/images/faces/face1.jpg" alt="user">
+                        <div style="width:100%;">
+
+                          <p class="text-info mb-1">Isabella Becker  (No: 01)</p>
+
+                            <div class="progress progress-md flex-grow-1 mr-12">
+                                    <div class="progress-bar bg-inf0" role="progressbar" style="width: 100%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0" style="margin-top:1%;">140 (Times)</p>
+                         
+
+                        </div>
+                      </div>
+                    </li>
+
+
+                    <li>
+                      <div class="d-flex">
+                        <img src="{{asset('dashboard-page-asset')}}/images/faces/face1.jpg" alt="user">
+                        <div style="width:100%;">
+
+                          <p class="text-info mb-1">Isabella Becker  (No: 01)</p>
+
+                            <div class="progress progress-md flex-grow-1 mr-12">
+                                    <div class="progress-bar bg-inf0" role="progressbar" style="width: 100%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0" style="margin-top:1%;">140 (Times)</p>
+                         
+
+                        </div>
+                      </div>
+                    </li>
+
+
+                    <li>
+                      <div class="d-flex">
+                        <img src="{{asset('dashboard-page-asset')}}/images/faces/face1.jpg" alt="user">
+                        <div style="width:100%;">
+
+                          <p class="text-info mb-1">Isabella Becker  (No: 01)</p>
+
+                            <div class="progress progress-md flex-grow-1 mr-12">
+                                    <div class="progress-bar bg-inf0" role="progressbar" style="width: 100%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0" style="margin-top:1%;">140 (Times)</p>
+                         
+
+                        </div>
+                      </div>
+                    </li>
+
+
+                    <li>
+                      <div class="d-flex">
+                        <img src="{{asset('dashboard-page-asset')}}/images/faces/face1.jpg" alt="user">
+                        <div style="width:100%;">
+
+                          <p class="text-info mb-1">Isabella Becker  (No: 01)</p>
+
+                            <div class="progress progress-md flex-grow-1 mr-12">
+                                    <div class="progress-bar bg-inf0" role="progressbar" style="width: 100%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0" style="margin-top:1%;">140 (Times)</p>
+                         
+
+                        </div>
+                      </div>
+                    </li>
+
+
+                    <li>
+                      <div class="d-flex">
+                        <img src="{{asset('dashboard-page-asset')}}/images/faces/face1.jpg" alt="user">
+                        <div style="width:100%;">
+
+                          <p class="text-info mb-1">Isabella Becker  (No: 01)</p>
+
+                            <div class="progress progress-md flex-grow-1 mr-12">
+                                    <div class="progress-bar bg-inf0" role="progressbar" style="width: 100%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0" style="margin-top:1%;">140 (Times)</p>
+                         
+
+                        </div>
+                      </div>
+                    </li>
+
+
+                    <li>
+                      <div class="d-flex">
+                        <img src="{{asset('dashboard-page-asset')}}/images/faces/face1.jpg" alt="user">
+                        <div style="width:100%;">
+
+                          <p class="text-info mb-1">Isabella Becker  (No: 01)</p>
+
+                            <div class="progress progress-md flex-grow-1 mr-12">
+                                    <div class="progress-bar bg-inf0" role="progressbar" style="width: 100%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0" style="margin-top:1%;">140 (Times)</p>
+                         
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 grid-margin">
+                    <div class="row">
+                        <div class="col-md-12 grid-margin stretch-card">
+                            <div class="card" style="background-color:#ebeff5;">
+                            <div class="card-body">
+                                <p class="card-title" style="text-align:center;">Top 10 Trending Words</p>
+                                <hr>
+                                <div class="charts-data">
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 1</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-inf0" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">5k</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 2</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">1k</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 3</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">992</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                </div>  
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 grid-margin">
+                    <div class="row">
+                        <div class="col-md-12 grid-margin stretch-card">
+                            <div class="card" style="background-color:#ebeff5;">
+                            <div class="card-body">
+                                <p class="card-title" style="text-align:center;">Top 10 Trending Contexts</p>
+                                <hr>
+                                <div class="charts-data">
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 1</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-inf0" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">5k</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 2</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">1k</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 3</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">992</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <p class="mb-0">Data 4</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p class="mb-0">687</p>
+                                    </div>
+                                </div>
+                                </div>  
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>       
+            </div>
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
+
+  <footer class="footer"">
+        <p style="text-align: center;">Copyright © <a href="https://dreamspace.academy/pages/1-0-index.php" target="_blank">DreamSpace Academy</a> | All Rights Reserved |  Co-created by <a href="https://www.linkedin.com/in/gunarakulan-gunaratnam-161119156/" target="_blank">Gunarakulan Gunaratnam</a></p>
+  </footer>
 
   <!-- plugins:js -->
   <script src="{{asset('dashboard-page-asset')}}/vendors/js/vendor.bundle.base.js"></script>
