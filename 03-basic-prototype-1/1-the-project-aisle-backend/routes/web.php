@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,8 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/',[PageController::class, 'ViewPageController']);
+Route::get('/',[PageController::class, 'ViewLoginPageController']);
+
+Route::POST('/handle-login', [UserController::class, 'HandleLogin']);
+
+Route::GET('/view-dashboard', [UserController::class, 'ViewDashboardPageController']);

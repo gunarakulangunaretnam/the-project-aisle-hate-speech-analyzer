@@ -27,47 +27,72 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('login-page-asset')}}/css/main.css">
 <!--===============================================================================================-->
 </head>
-<body>
+<body  style="background-color:#f2f2f2;">
 
 	<div class="limiter">
+
+		@if($errors->any())
+			@foreach ($errors->all() as $error)
+					<div id="errorBox" style="text-align:center;margin-top:20px;" class="alert alert-danger col-md-12 alert-dismissible fade show" role="alert">
+							<strong>{!!$error!!}</strong>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+							</button>
+					</div>
+
+					<script>
+
+						window.onload=function(){
+
+							$("#errorBox").delay(3000).fadeOut("slow");
+
+						}
+
+					</script>
+
+			@endforeach
+		@endif
+
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+					<form action="handle-login" class="login100-form validate-form" method="POST" enctype="multipart/form-data">
 
-					<span class="login100-form-title p-b-26">
-					 	The Project AISLE
-					</span>
+						{{ csrf_field() }}
 
-					<span class="login100-form-title p-b-26">
-					 	Welcome
-					</span>
-
-					<hr>
-
-
-
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="text" name="username">
-						<span class="focus-input100" data-placeholder="Username"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
+						<span class="login100-form-title p-b-26">
+						 	The Project AISLE
 						</span>
-						<input class="input100" type="password" name="password">
-						<span class="focus-input100" data-placeholder="Password"></span>
-					</div>
 
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
-								Login
-							</button>
+						<span class="login100-form-title p-b-26">
+						 	Welcome
+						</span>
+
+						<hr>
+
+						<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+							<input class="input100" type="text" name="username">
+							<span class="focus-input100" data-placeholder="Username"></span>
 						</div>
-					</div>
+
+						<div class="wrap-input100 validate-input" data-validate="Enter password">
+							<span class="btn-show-pass">
+								<i class="zmdi zmdi-eye"></i>
+							</span>
+							<input class="input100" type="password" name="password">
+							<span class="focus-input100" data-placeholder="Password"></span>
+						</div>
+
+						<div class="container-login100-form-btn">
+							<div class="wrap-login100-form-btn">
+								<div class="login100-form-bgbtn"></div>
+								<button type="submit" class="login100-form-btn">
+									Login
+								</button>
+							</div>
+						</div>
+
 				</form>
+
 			</div>
 		</div>
 	</div>
