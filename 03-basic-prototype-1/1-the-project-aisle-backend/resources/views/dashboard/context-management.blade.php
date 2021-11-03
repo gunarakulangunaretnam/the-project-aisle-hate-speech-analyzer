@@ -100,13 +100,13 @@
         <tbody>
 
 
-        @foreach ($context_data as $key => $user)
+        @foreach ($context_data as $key => $data)
     
             <tr>
                 <th scope="row">{{ $key + 1 }}</th>
-                <td>{{$user->context}}</td>
-                <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">{{$user->description}}</td>
-                <td><a style="width:35%;" class="btn btn-danger btn-sm confirmation" href="/delete-context-data/{{$user->auto_id}}">Delete</a>&nbsp;</td>
+                <td>{{$data->context}}</td>
+                <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">{{$data->description}}</td>
+                <td><a style="width:35%;" class="btn btn-danger btn-sm confirmation" href="/delete-context-data/{{$data->auto_id}}">Delete</a>&nbsp;</td>
             </tr>
     
         @endforeach

@@ -61,6 +61,25 @@ class DatabaseController extends Controller
 
     }
 
+    public function DeleteKeywordDataController($auto_id){
+        
+        $session_type = Session::get('Session_Type');
+    
+        if($session_type == "Admin"){
+
+            if(DB::table('knowledgebase')->where('auto_id', '=', $auto_id)->delete()){
+
+                return redirect()->back()->with('message', 'Data Deleted Successfully.');
+            }
+            
+        }else{
+
+            return Redirect::to("/");
+
+        }
+
+    }
+
     public function InsertKeywordData(Request $request){
 
         $session_type = Session::get('Session_Type');
@@ -78,7 +97,7 @@ class DatabaseController extends Controller
             $language =  $request->language;
             $description =  $request->description;
 
-            if(DB::insert('INSERT INTO knowledgebase (keyword, context_tags, description, language) values ( ?, ?, ?, ?)', [$keyword, $context_tags, $language, $description])){
+            if(DB::insert('INSERT INTO knowledgebase (keyword, context_tags, language, description) values ( ?, ?, ?, ?)', [$keyword, json_encode($context_tags), $language, $description])){
 
                 return redirect()->back()->with('message', 'Data Inserted Successfully.');
 

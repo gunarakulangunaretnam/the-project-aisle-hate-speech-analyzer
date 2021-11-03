@@ -79,13 +79,13 @@
             <div class="form-group row">
                 <label for="context_tags" class="col-sm-2 col-form-label">Context Tags</label>
                 <div class="col-sm-10">
-                    <select style="height:300px; !important" data-placeholder="Context Tags" id="context_tags" name="context_tags" multiple class="chosen-select form-control" name="test" required>
+                    <select style="height:300px; !important" data-placeholder="Context Tags" id="context_tags" name="context_tags[]" multiple class="chosen-select form-control" required>
                         
                         <option value=""></option>
 
-                        @foreach ($all_context_names as $key => $user)
+                        @foreach ($all_context_names as $key => $data)
     
-                            <option>{{$user->context}}</option>
+                            <option>{{$data->context}}</option>
 
                         @endforeach
                         
@@ -130,70 +130,34 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Bad word</td>
-                <td>Bad words</td>
-                <td>English</td>
-                <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">This is used to expose sexual <br> This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa</td>
-                <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
-            </tr>
+        <tbody> 
+                @foreach ($keyword_data as $key => $data)
 
-            <tr>
-                <th scope="row">1</th>
-                <td>Bad word</td>
-                <td>Bad words</td>
-                <td>English</td>
-                <td>This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa</td>
-                <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
-            </tr> <tr>
-                <th scope="row">1</th>
-                <td>Bad word</td>
-                <td>Bad words</td>
-                <td>English</td>
-                <td>This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa</td>
-                <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
-            </tr> <tr>
-                <th scope="row">1</th>
-                <td>Bad word</td>
-                <td>Bad words</td>
-                <td>English</td>
-                <td>This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa</td>
-                <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
-            </tr> <tr>
-                <th scope="row">1</th>
-                <td>Bad word</td>
-                <td>Bad words</td>
-                <td>English</td>
-                <td>This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa</td>
-                <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
-            </tr> <tr>
-                <th scope="row">1</th>
-                <td>Bad word</td>
-                <td>Bad words</td>
-                <td>English</td>
-                <td>This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa</td>
-                <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
-            </tr> <tr>
-                <th scope="row">1</th>
-                <td>Bad word</td>
-                <td>Bad words</td>
-                <td>English</td>
-                <td>This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa</td>
-                <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
-            </tr>
+                    <tr>
+                        <th scope="row">{{ $key + 1 }}</th>
+                        <td>{{$data->keyword}}</td>
+                        <td>{{$data->context_tags}}</td>
+                        <td>{{$data->language}}</td>
+                        <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">{{$data->description}}</td>
+                        <td><a class="btn btn-danger btn-sm confirmation" href="/delete-keyword-data/{{$data->auto_id}}">Delete</a></td>
+                    </tr>
 
+                @endforeach
         </tbody>
     </table>
-
 
     <script>
 
         window.onload = function(){
+            
             $(".chosen-select").chosen({
                 no_results_text: "Oops, nothing found!"
             })
+
+            $('.confirmation').on('click', function () {
+                return confirm('Are you sure to delete?');
+            });
+            
         } 
 
     </script>

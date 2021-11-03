@@ -54,13 +54,14 @@ class PageController extends Controller
     public function ViewKeywordManagementController(){
 
       $all_context_names = DB::select("SELECT context FROM context_data");
+
+      $keyword_data =  DB::table('knowledgebase')->get();
     
-      
       $session_type = Session::get('Session_Type');
 
       if($session_type == "Admin"){
 
-        return view('dashboard/keyword-management')->with('all_context_names', $all_context_names);
+        return view('dashboard/keyword-management')->with(['all_context_names'=>$all_context_names, 'keyword_data' => $keyword_data]);
 
       }else{
 
