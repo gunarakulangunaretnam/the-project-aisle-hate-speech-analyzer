@@ -24,7 +24,7 @@ class PageController extends Controller
 
       if($session_type == "Admin"){
 
-        return view('dashboard/index');
+        return view('dashboard/dashboard-home-page');
 
       }else{
 
