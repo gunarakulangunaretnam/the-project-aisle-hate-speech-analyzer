@@ -67,4 +67,21 @@ class PageController extends Controller
 
     }
 
+    public function ViewContextManagementController(){
+
+      $session_type = Session::get('Session_Type');
+
+      if($session_type == "Admin"){
+
+        return view('dashboard/context-management');
+
+      }else{
+
+        return Redirect::to("/");
+
+      }
+
+
+    }
+
 }

@@ -28,3 +28,6 @@ Route::GET('/view-change-password-page', [PageController::class, 'ViewChangePass
 Route::POST('/change-password', [UserController::class, 'ChangePassword']);
 
 Route::GET('/view-keyword-management', [PageController::class, 'ViewKeywordManagementController']);
+
+
+Route::GET('/view-context-management', [PageController::class, 'ViewContextManagementController']);

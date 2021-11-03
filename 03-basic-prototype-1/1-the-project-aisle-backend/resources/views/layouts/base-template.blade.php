@@ -23,15 +23,11 @@
 
   <style>
 
-    .table th, .jsgrid .jsgrid-table th, .table td, .jsgrid .jsgrid-table td {
-        vertical-align: middle;
-        line-height: 1;
-        white-space: normal;
-        line-height:120%;
+    ul.chosen-choices{
+      height:50px !important;
     }
 
   </style>
-
 
   
 </head>
@@ -77,7 +73,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Social Media</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/view-keyword-management">Keyword</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Context</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/view-context-management">Context</a></li>
               </ul>
             </div>
           </li>
@@ -143,6 +139,9 @@
   <!-- Custom js for this page-->
   <script src="{{asset('dashboard-page-asset')}}/js/dashboard.js"></script>
   <script src="{{asset('dashboard-page-asset')}}/js/Chart.roundedBarCharts.js"></script>
+
+  <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+<link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
   <!-- End custom js for this page-->
 </body>
 
