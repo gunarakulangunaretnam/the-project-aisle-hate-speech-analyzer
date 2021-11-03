@@ -26,3 +26,5 @@ Route::GET('/view-dashboard', [PageController::class, 'ViewDashboardPageControll
 Route::GET('/view-change-password-page', [PageController::class, 'ViewChangePasswordController']);
 
 Route::POST('/change-password', [UserController::class, 'ChangePassword']);
+
+Route::GET('/view-keyword-management', [PageController::class, 'ViewKeywordManagementController']);

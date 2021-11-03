@@ -20,6 +20,20 @@
   <link rel="stylesheet" href="{{asset('dashboard-page-asset')}}/css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('dashboard-page-asset')}}/images/logo.ico" />
+
+  <style>
+
+    .table th, .jsgrid .jsgrid-table th, .table td, .jsgrid .jsgrid-table td {
+        vertical-align: middle;
+        line-height: 1;
+        white-space: normal;
+        line-height:120%;
+    }
+
+  </style>
+
+
+  
 </head>
 <body>
   <div class="container-scroller">
@@ -62,7 +76,7 @@
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Social Media</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Keyword</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/view-keyword-management">Keyword</a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Context</a></li>
               </ul>
             </div>
