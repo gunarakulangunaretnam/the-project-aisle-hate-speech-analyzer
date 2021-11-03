@@ -7,12 +7,63 @@
         </div>
     </div>
 
+    <div style="width:100%; height:100px;">
+
+        @if($errors->any())
+                @foreach ($errors->all() as $error)
+                    
+                <div id="errorBox" style="text-align:center;margin-top:20px;" class="alert alert-danger col-md-12 alert-dismissible fade show" role="alert">
+                    <strong>{!!$error!!}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <script>
+                
+                    setTimeout(
+                    function() 
+                    {
+                        $("#errorBox").delay(3000).fadeOut("slow");
+
+                    }, 1000);
+
+                </script>
+
+                @endforeach
+        @endif
+
+
+        @if(session()->has('message'))
+
+        <div id="successBox" style="text-align:center;margin-top:20px;" class="alert alert-success col-md-12 alert-dismissible fade show" role="alert">
+                    <strong> {{ session()->get('message') }}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+        </div>
+
+        <script>
+                
+                setTimeout(
+                function() 
+                {
+                    $("#successBox").delay(3000).fadeOut("slow");
+
+                }, 1000);
+
+        </script>
+
+        @endif
+
+    </div>
+
     <div class="jumbotron">
 
         <h3 style="text-align:center;">Insert Context</h3>
         <hr class="my-4">
   				
-        <form action="/change-password" class="login100-form validate-form" method="POST" enctype="multipart/form-data">
+        <form action="/insert-context-data" class="login100-form validate-form" method="POST" enctype="multipart/form-data">
         
             {{ csrf_field() }}
 
@@ -90,7 +141,6 @@
                 <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
             </tr>
            
-
         </tbody>
     </table>
 

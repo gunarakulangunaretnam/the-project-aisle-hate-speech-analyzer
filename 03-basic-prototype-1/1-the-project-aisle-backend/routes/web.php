@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DatabaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +30,6 @@ Route::POST('/change-password', [UserController::class, 'ChangePassword']);
 
 Route::GET('/view-keyword-management', [PageController::class, 'ViewKeywordManagementController']);
 
-
 Route::GET('/view-context-management', [PageController::class, 'ViewContextManagementController']);
+
+Route::POST('/insert-context-data', [DatabaseController::class, 'InsertContextData']);
