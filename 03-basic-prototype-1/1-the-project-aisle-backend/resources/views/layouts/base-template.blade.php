@@ -82,8 +82,8 @@
             </a>
             <div class="collapse" id="error">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> General Settings </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> User Settings </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> General Settings </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/view-change-password-page"> User Settings </a></li>
               </ul>
             </div>
           </li>

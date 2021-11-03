@@ -27,7 +27,6 @@
                     </div>
                     <p class="mb-0" style="margin-top:1%;">140 (Times)</p>
                  
-
                 </div>
               </div>
             </li>
@@ -424,3 +423,5 @@
             </div>
         </div>       
     </div>
+
+@endsection

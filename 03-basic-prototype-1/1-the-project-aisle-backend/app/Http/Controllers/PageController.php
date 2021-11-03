@@ -24,13 +24,30 @@ class PageController extends Controller
 
       if($session_type == "Admin"){
 
-        return view('dashboard/dashboard-home-page');
+        return view('dashboard/home-page');
 
       }else{
 
         return Redirect::to("/");
 
       }
+
+    }
+
+    public function ViewChangePasswordController(){
+
+      $session_type = Session::get('Session_Type');
+
+      if($session_type == "Admin"){
+
+        return view('dashboard/user-settings');
+
+      }else{
+
+        return Redirect::to("/");
+
+      }
+
 
     }
 

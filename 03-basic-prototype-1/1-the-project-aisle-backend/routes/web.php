@@ -22,3 +22,7 @@ Route::POST('/handle-login', [UserController::class, 'HandleLogin']);
 Route::GET('/handle-logout', [UserController::class, 'HandleLogout']);
 
 Route::GET('/view-dashboard', [PageController::class, 'ViewDashboardPageController']);
+
+Route::GET('/view-change-password-page', [PageController::class, 'ViewChangePasswordController']);
+
+Route::POST('/change-password', [UserController::class, 'ChangePassword']);
