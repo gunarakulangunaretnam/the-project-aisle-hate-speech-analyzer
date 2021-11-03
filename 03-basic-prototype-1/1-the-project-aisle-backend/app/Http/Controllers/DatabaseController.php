@@ -59,6 +59,36 @@ class DatabaseController extends Controller
 
         }
 
+    }
+
+    public function InsertKeywordData(Request $request){
+
+        $session_type = Session::get('Session_Type');
+    
+        if($session_type == "Admin"){
+
+            $this->validate($request, [
+                'keyword' => 'required',
+                'context_tags' => 'required',
+                'language' => 'required',
+            ]);
+
+            $keyword =  $request->keyword;
+            $context_tags =  $request->context_tags;
+            $language =  $request->language;
+            $description =  $request->description;
+
+            if(DB::insert('INSERT INTO knowledgebase (keyword, context_tags, description, language) values ( ?, ?, ?, ?)', [$keyword, $context_tags, $language, $description])){
+
+                return redirect()->back()->with('message', 'Data Inserted Successfully.');
+
+            }
+            
+        }else{
+
+            return Redirect::to("/");
+
+        }
 
     }
 

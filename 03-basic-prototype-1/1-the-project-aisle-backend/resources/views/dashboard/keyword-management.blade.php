@@ -1,5 +1,6 @@
 @extends('layouts.base-template')
 @section('content')
+   
 
     <div class="card card-tale" style="background-color:#e9ecef; color:black; margin-bottom:2%;  margin-top:2%;">
         <div class="card-body">
@@ -7,12 +8,64 @@
         </div>
     </div>
 
+    <div style="width:100%; height:auto;">
+
+            @if($errors->any())
+                @foreach ($errors->all() as $error)
+                    
+                    <div id="errorBox" style="text-align:center;margin-top:20px;" class="alert alert-danger col-md-12 alert-dismissible fade show" role="alert">
+                        <strong>{!!$error!!}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <script>
+                    
+                        setTimeout(
+                        function() 
+                        {
+                            $("#errorBox").delay(3000).fadeOut("slow");
+
+                        }, 1000);
+
+                    </script>
+
+                @endforeach
+            @endif
+
+
+        @if(session()->has('message'))
+
+            <div id="successBox" style="text-align:center;margin-top:20px;" class="alert alert-success col-md-12 alert-dismissible fade show" role="alert">
+                        <strong> {{ session()->get('message') }}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+            </div>
+
+            <script>
+                    
+                    setTimeout(
+                    function() 
+                    {
+                        $("#successBox").delay(3000).fadeOut("slow");
+
+                    }, 1000);
+
+            </script>
+
+        @endif
+
+    </div>
+
+
     <div class="jumbotron">
 
         <h3 style="text-align:center;">Insert Keywords</h3>
         <hr class="my-4">
   				
-        <form action="/change-password" class="login100-form validate-form" method="POST" enctype="multipart/form-data">
+        <form action="/insert-keyword-data" class="login100-form validate-form" method="POST" enctype="multipart/form-data">
         
             {{ csrf_field() }}
 
@@ -26,16 +79,16 @@
             <div class="form-group row">
                 <label for="context_tags" class="col-sm-2 col-form-label">Context Tags</label>
                 <div class="col-sm-10">
-                    <select style="height:300px; !important" data-placeholder="Context Tags" id="context_tags" name="context_tags" multiple class="chosen-select form-control" name="test">
+                    <select style="height:300px; !important" data-placeholder="Context Tags" id="context_tags" name="context_tags" multiple class="chosen-select form-control" name="test" required>
+                        
                         <option value=""></option>
-                        <option>American Black Bear</option>
-                        <option>Asiatic Black Bear</option>
-                        <option>Brown Bear</option>
-                        <option>Giant Panda</option>
-                        <option>Sloth Bear</option>
-                        <option>Sun Bear</option>
-                        <option>Polar Bear</option>
-                        <option>Spectacled Bear</option>
+
+                        @foreach ($all_context_names as $key => $user)
+    
+                            <option>{{$user->context}}</option>
+
+                        @endforeach
+                        
                     </select>
                 </div>
             </div>
@@ -52,7 +105,6 @@
             </div>
 
          
-
             <div class="form-group row">
               <label for="description" class="col-sm-2 col-form-label">Description</label>
               <div class="col-sm-10">

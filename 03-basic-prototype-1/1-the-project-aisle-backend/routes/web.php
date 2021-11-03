@@ -35,3 +35,5 @@ Route::GET('/view-context-management', [PageController::class, 'ViewContextManag
 Route::POST('/insert-context-data', [DatabaseController::class, 'InsertContextData']);
 
 Route::GET('/delete-context-data/{auto_id}', [DatabaseController::class, 'DeleteContextDataController']);
+
+Route::POST('/insert-keyword-data', [DatabaseController::class, 'InsertKeywordData']);
