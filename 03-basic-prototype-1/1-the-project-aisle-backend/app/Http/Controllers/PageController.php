@@ -71,9 +71,11 @@ class PageController extends Controller
 
       $session_type = Session::get('Session_Type');
 
+      $context_data = DB::table('context_data')->get();
+
       if($session_type == "Admin"){
 
-        return view('dashboard/context-management');
+        return view('dashboard/context-management')->with('context_data', $context_data);;
 
       }else{
 

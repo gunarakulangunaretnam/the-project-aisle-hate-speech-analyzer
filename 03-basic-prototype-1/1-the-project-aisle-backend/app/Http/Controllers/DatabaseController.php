@@ -14,20 +14,51 @@ class DatabaseController extends Controller
 
     public function InsertContextData(Request $request){
         
-      $this->validate($request, [
-        'context' => 'required',
-        'description' => 'required',
-      ]);
+        $session_type = Session::get('Session_Type');
+    
+        if($session_type == "Admin"){
+
+            $this->validate($request, [
+                'context' => 'required',
+            ]);
 
 
-      $context =  $request->context;
-      $description =  $request->description;
+            $context =  $request->context;
+            $description =  $request->description;
 
-      if(DB::insert('INSERT INTO context_data (context, description) values ( ?, ?)', [$context, $description])){
+            if(DB::insert('INSERT INTO context_data (context, description) values ( ?, ?)', [$context, $description])){
 
-        return redirect()->back()->with('message', 'Data Inserted Successfully.');
+                return redirect()->back()->with('message', 'Data Inserted Successfully.');
 
-      }
+            }
+
+        }else{
+
+
+            return Redirect::to("/");
+
+        }
+       
+
+    }
+
+    public function DeleteContextDataController($auto_id){
+        
+        $session_type = Session::get('Session_Type');
+    
+        if($session_type == "Admin"){
+
+            if(DB::table('context_data')->where('auto_id', '=', $auto_id)->delete()){
+
+                return redirect()->back()->with('message', 'Data Deleted Successfully.');
+            }
+            
+        }else{
+
+            return Redirect::to("/");
+
+        }
+
 
     }
 

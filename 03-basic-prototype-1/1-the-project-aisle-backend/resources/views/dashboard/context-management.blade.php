@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <div style="width:100%; height:100px;">
+    <div style="width:100%; height:auto;">
 
         @if($errors->any())
                 @foreach ($errors->all() as $error)
@@ -98,48 +98,20 @@
             </tr>
         </thead>
         <tbody>
+
+
+        @foreach ($context_data as $key => $user)
+    
+            <tr>
+                <th scope="row">{{ $key + 1 }}</th>
+                <td>{{$user->context}}</td>
+                <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">{{$user->description}}</td>
+                <td><a style="width:35%;" class="btn btn-danger btn-sm confirmation" href="/delete-context-data/{{$user->auto_id}}">Delete</a>&nbsp;</td>
+            </tr>
+    
+        @endforeach
            
-            <tr>
-                <th scope="row">1</th>
-                <td>Bad word</td>
-                <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">This is used to expose sexual <br> This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa</td>
-                <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
-            </tr>
-
-            <tr>
-                <th scope="row">1</th>
-                <td>Bad word</td>
-                <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">This is used to expose sexual <br> This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa</td>
-                <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
-            </tr>
-
-            <tr>
-                <th scope="row">1</th>
-                <td>Bad word</td>
-                <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">This is used to expose sexual <br> This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa</td>
-                <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
-            </tr>
-
-            <tr>
-                <th scope="row">1</th>
-                <td>Bad word</td>
-                <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">This is used to expose sexual <br> This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa</td>
-                <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
-            </tr>
-
-            <tr>
-                <th scope="row">1</th>
-                <td>Bad word</td>
-                <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">This is used to expose sexual <br> This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa</td>
-                <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
-            </tr>
-
-            <tr>
-                <th scope="row">1</th>
-                <td>Bad word</td>
-                <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">This is used to expose sexual <br> This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa This is used to expose sexual This is used to expose sexualThis is used to exposedsajdlksa</td>
-                <td><a class="btn btn-danger btn-sm">Delete</a>&nbsp; <button class="btn btn-success btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button></td>
-            </tr>
+          
            
         </tbody>
     </table>
@@ -148,11 +120,12 @@
     <script>
 
         window.onload = function(){
-            $(".chosen-select").chosen({
-                no_results_text: "Oops, nothing found!"
-            })
+            $('.confirmation').on('click', function () {
+                return confirm('Are you sure to delete?');
+            });
         } 
 
     </script>
+
 
 @endsection
