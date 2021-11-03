@@ -80,7 +80,7 @@ class DatabaseController extends Controller
 
     }
 
-    public function InsertKeywordData(Request $request){
+    public function InsertKeywordDataController(Request $request){
 
         $session_type = Session::get('Session_Type');
     
@@ -111,5 +111,47 @@ class DatabaseController extends Controller
 
     }
 
+
+    public function InsertSocialMediaDataController(Request $request){
+
+        $session_type = Session::get('Session_Type');
+    
+        if($session_type == "Admin"){
+
+            $this->validate($request, [
+                'social_media' => 'required',
+                'account_name' => 'required',
+                'account_type' => 'required',
+                'url' => 'required',              
+                'language' => 'required',
+            ]);
+
+            $social_media =  $request->social_media;
+            $account_name =  $request->account_name;
+            $account_type =  $request->account_type;
+            $url          =  $request->url;
+            $network_size =  $request->network_size;
+            $main_user    =  $request->main_user;
+            $language     =  $request->language;
+            $remarks      =  $request->remarks;
+
+            if($remarks == ""){
+
+                $remarks = "[NULL]";
+            }
+
+            if(DB::insert('INSERT INTO social_media (social_media, account_name, account_type, url, network_size, main_user_name, language, remarks, number_of_time_tested) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$social_media, $account_name, $account_type, $url, $network_size, $main_user, $language, $remarks, "0"])){
+
+                return redirect()->back()->with('message', 'Data Inserted Successfully.');
+
+            }
+            
+        }else{
+
+            return Redirect::to("/");
+
+        }
+
+    }
 
 }

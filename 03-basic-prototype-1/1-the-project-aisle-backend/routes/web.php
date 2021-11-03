@@ -36,8 +36,11 @@ Route::POST('/insert-context-data', [DatabaseController::class, 'InsertContextDa
 
 Route::GET('/delete-context-data/{auto_id}', [DatabaseController::class, 'DeleteContextDataController']);
 
-Route::POST('/insert-keyword-data', [DatabaseController::class, 'InsertKeywordData']);
+Route::POST('/insert-keyword-data', [DatabaseController::class, 'InsertKeywordDataController']);
 
 Route::GET('/delete-keyword-data/{auto_id}', [DatabaseController::class, 'DeleteKeywordDataController']);
 
+Route::GET('/view-social-media-management', [PageController::class, 'ViewSocialMediaManagementController']);
+
+Route::POST('/insert-social-media-data', [DatabaseController::class, 'InsertSocialMediaDataController']);
 

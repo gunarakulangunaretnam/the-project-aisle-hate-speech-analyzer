@@ -71,7 +71,7 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Social Media</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/view-social-media-management">Social Media</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/view-keyword-management">Keyword</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/view-context-management">Context</a></li>
               </ul>

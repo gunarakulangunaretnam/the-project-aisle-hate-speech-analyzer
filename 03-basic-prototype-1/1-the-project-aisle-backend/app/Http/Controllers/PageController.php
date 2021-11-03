@@ -90,4 +90,23 @@ class PageController extends Controller
 
     }
 
+    public function ViewSocialMediaManagementController(){
+
+      $session_type = Session::get('Session_Type');
+
+      $social_media_data = DB::table('social_media')->get();
+
+      if($session_type == "Admin"){
+
+        return view('dashboard/social-media-management')->with('social_media_data', $social_media_data);
+
+      }else{
+
+        return Redirect::to("/");
+
+      }
+
+
+    }
+
 }

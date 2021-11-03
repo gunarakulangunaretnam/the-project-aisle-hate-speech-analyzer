@@ -118,33 +118,37 @@
         
     </div>
 
+    
+    <div style="overflow-x:auto;">
 
-    <table class="table table-hover" style="background-color:#e9ecef; color:black; margin-bottom:3%;">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Keyword</th>
-                <th scope="col">Context Tags</th>
-                <th scope="col">Language</th>
-                <th scope="col">Description</th>
-                <th scope="col">Actions</th>
-            </tr>
-        </thead>
-        <tbody> 
-                @foreach ($keyword_data as $key => $data)
+        <table class="table table-hover" style="background-color:#e9ecef; color:black; margin-bottom:3%;">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Keyword</th>
+                    <th scope="col">Context Tags</th>
+                    <th scope="col">Language</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody> 
+                    @foreach ($keyword_data as $key => $data)
 
-                    <tr>
-                        <th scope="row">{{ $key + 1 }}</th>
-                        <td>{{$data->keyword}}</td>
-                        <td>{{$data->context_tags}}</td>
-                        <td>{{$data->language}}</td>
-                        <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">{{$data->description}}</td>
-                        <td><a class="btn btn-danger btn-sm confirmation" href="/delete-keyword-data/{{$data->auto_id}}">Delete</a></td>
-                    </tr>
+                        <tr>
+                            <th scope="row">{{ $key + 1 }}</th>
+                            <td>{{$data->keyword}}</td>
+                            <td>{{$data->context_tags}}</td>
+                            <td>{{$data->language}}</td>
+                            <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">{{$data->description}}</td>
+                            <td><a class="btn btn-danger btn-sm confirmation" href="/delete-keyword-data/{{$data->auto_id}}">Delete</a></td>
+                        </tr>
 
-                @endforeach
-        </tbody>
-    </table>
+                    @endforeach
+            </tbody>
+        </table>
+        
+    </div>
 
     <script>
 
