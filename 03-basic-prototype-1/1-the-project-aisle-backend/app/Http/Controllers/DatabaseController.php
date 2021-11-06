@@ -13,9 +13,9 @@ class DatabaseController extends Controller
 {
 
     public function InsertContextData(Request $request){
-        
+
         $session_type = Session::get('Session_Type');
-    
+
         if($session_type == "Admin"){
 
             $this->validate($request, [
@@ -38,21 +38,21 @@ class DatabaseController extends Controller
             return Redirect::to("/");
 
         }
-       
+
 
     }
 
     public function DeleteContextDataController($auto_id){
-        
+
         $session_type = Session::get('Session_Type');
-    
+
         if($session_type == "Admin"){
 
             if(DB::table('context_data')->where('auto_id', '=', $auto_id)->delete()){
 
                 return redirect()->back()->with('message', 'Data Deleted Successfully.');
             }
-            
+
         }else{
 
             return Redirect::to("/");
@@ -62,16 +62,16 @@ class DatabaseController extends Controller
     }
 
     public function DeleteKeywordDataController($auto_id){
-        
+
         $session_type = Session::get('Session_Type');
-    
+
         if($session_type == "Admin"){
 
             if(DB::table('knowledgebase')->where('auto_id', '=', $auto_id)->delete()){
 
                 return redirect()->back()->with('message', 'Data Deleted Successfully.');
             }
-            
+
         }else{
 
             return Redirect::to("/");
@@ -83,7 +83,7 @@ class DatabaseController extends Controller
     public function InsertKeywordDataController(Request $request){
 
         $session_type = Session::get('Session_Type');
-    
+
         if($session_type == "Admin"){
 
             $this->validate($request, [
@@ -102,7 +102,7 @@ class DatabaseController extends Controller
                 return redirect()->back()->with('message', 'Data Inserted Successfully.');
 
             }
-            
+
         }else{
 
             return Redirect::to("/");
@@ -115,14 +115,14 @@ class DatabaseController extends Controller
     public function InsertSocialMediaDataController(Request $request){
 
         $session_type = Session::get('Session_Type');
-    
+
         if($session_type == "Admin"){
 
             $this->validate($request, [
                 'social_media' => 'required',
                 'account_name' => 'required',
                 'account_type' => 'required',
-                'url' => 'required',              
+                'url' => 'required',
                 'language' => 'required',
             ]);
 
@@ -145,7 +145,26 @@ class DatabaseController extends Controller
                 return redirect()->back()->with('message', 'Data Inserted Successfully.');
 
             }
-            
+
+        }else{
+
+            return Redirect::to("/");
+
+        }
+
+    }
+
+    public function DeleteSocialMediaDataController($auto_id){
+
+        $session_type = Session::get('Session_Type');
+
+        if($session_type == "Admin"){
+
+            if(DB::table('social_media')->where('auto_id', '=', $auto_id)->delete()){
+
+                return redirect()->back()->with('message', 'Data Deleted Successfully.');
+            }
+
         }else{
 
             return Redirect::to("/");
