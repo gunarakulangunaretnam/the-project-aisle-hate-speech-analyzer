@@ -7,15 +7,14 @@
     <h3 style="text-align:center;">Insert Account Details</h3>
     <hr class="my-4">
 
-    <form action="/edit-social-media-data" class="login100-form validate-form" method="POST" enctype="multipart/form-data">
+    <form action="/edit-social-media-data/{{$social_mediaind_ividual_data[0]->auto_id}}" class="login100-form validate-form" method="POST" enctype="multipart/form-data">
 
         {{ csrf_field() }}
 
         <div class="form-group row">
             <label for="social_media" class="col-sm-2 col-form-label">Social Media</label>
             <div class="col-sm-10">
-            <select class="form-control" id="social_media" name="social_media" style="color:black;" value = ''  required>
-                <option value="" selected disabled hidden>{{$social_mediaind_ividual_data[0]->social_media}}</option>
+            <select class="form-control" id="social_media" name="social_media" style="color:black;"  required>
                 <option>Facebook</option>
                 <option>Twitter</option>
                 <option>Instagram</option>
@@ -35,7 +34,6 @@
             <label for="account_type" class="col-sm-2 col-form-label">Account Type</label>
             <div class="col-sm-10">
             <select class="form-control" id="account_type" name="account_type" style="color:black;" required>
-                <option value="" selected disabled hidden>{{$social_mediaind_ividual_data[0]->account_type}}</option>
                 <option>Page</option>
                 <option>Profile</option>
                 <option>Other</option>
@@ -70,7 +68,6 @@
             <label for="language" class="col-sm-2 col-form-label">Language</label>
             <div class="col-sm-10">
             <select class="form-control" id="language" name="language" style="color:black;" required>
-                <option value="" selected disabled hidden>{{$social_mediaind_ividual_data[0]->language}}</option>
                 <option>Sinhala</option>
                 <option>Tamil</option>
             </select>
@@ -84,10 +81,65 @@
           </div>
         </div>
 
-        <input type="submit" value="Add" class="btn btn-success btn-lg btn-block">
+        <input type="submit" value="Update" class="btn btn-success btn-lg btn-block">
 
     </form>
 
 </div>
+
+<script>
+
+    window.onload = function(){
+
+      var social_media = "{{$social_mediaind_ividual_data[0]->social_media}}";
+      var account_type = "{{$social_mediaind_ividual_data[0]->account_type}}";
+      var language = "{{$social_mediaind_ividual_data[0]->language}}";
+
+
+      if(social_media == "Facebook"){
+
+        document.getElementById("social_media").selectedIndex = 0;
+
+      }else if(social_media == "Twitter"){
+
+        document.getElementById("social_media").selectedIndex = 1;
+
+      }else if(social_media == "Instagram"){
+
+        document.getElementById("social_media").selectedIndex = 2;
+
+      }else if(social_media == "Youtube"){
+
+        document.getElementById("social_media").selectedIndex = 3;
+
+      }
+
+      if(account_type == "Page"){
+
+        document.getElementById("account_type").selectedIndex = 0;
+
+      }else if(account_type == "Profile"){
+
+        document.getElementById("account_type").selectedIndex = 1;
+
+      }else if(account_type == "Other"){
+
+        document.getElementById("account_type").selectedIndex = 2;
+
+      }
+
+      if(language == "Sinhala"){
+
+        document.getElementById("language").selectedIndex = 1;
+
+      }else if(language == "Tamil"){
+
+        document.getElementById("language").selectedIndex = 0;
+
+      }
+
+    }
+
+</script>
 
 @endsection

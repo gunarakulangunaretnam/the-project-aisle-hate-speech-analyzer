@@ -160,6 +160,7 @@ class DatabaseController extends Controller
 
         if($session_type == "Admin"){
 
+
             if(DB::table('social_media')->where('auto_id', '=', $auto_id)->delete()){
 
                 return redirect()->back()->with('message', 'Data Deleted Successfully.');
@@ -170,6 +171,44 @@ class DatabaseController extends Controller
             return Redirect::to("/");
 
         }
+
+    }
+
+    public function EditSocialMediaDataController($auto_id){
+
+      $session_type = Session::get('Session_Type');
+
+      if($session_type == "Admin"){
+
+        $this->validate($request, [
+            'social_media' => 'required',
+            'account_name' => 'required',
+            'account_type' => 'required',
+            'url' => 'required',
+            'language' => 'required',
+        ]);
+
+        $social_media =  $request->social_media;
+        $account_name =  $request->account_name;
+        $account_type =  $request->account_type;
+        $url          =  $request->url;
+        $network_size =  $request->network_size;
+        $main_user    =  $request->main_user;
+        $language     =  $request->language;
+        $remarks      =  $request->remarks;
+
+        $status =  DB::table('users')->where('auto_id', $auto_id)->update(['social_media' => $social_media, 'account_name' => $account_name, 'account_name' => $account_type, 'url' => $url, 'network_size' => $network_size, 'main_user_name'=> $main_user, 'language' => $language, 'remarks' => $remarks]);
+
+        if(status){
+
+            return redirect()->back()->with('message', 'Data Deleted Successfully.');
+        }
+
+      }else{
+
+          return Redirect::to("/");
+
+      }
 
     }
 

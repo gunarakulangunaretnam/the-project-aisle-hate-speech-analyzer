@@ -47,3 +47,5 @@ Route::POST('/insert-social-media-data', [DatabaseController::class, 'InsertSoci
 Route::GET('/delete-social-media-data/{auto_id}', [DatabaseController::class, 'DeleteSocialMediaDataController']);
 
 Route::GET('/view-social-media-data-edit-page/{auto_id}', [PageController::class, 'ViewSocialMediaDataEditPageController']);
+
+Route::POST('/edit-social-media-data/{auto_id}', [DatabaseController::class, 'EditSocialMediaDataController']);
