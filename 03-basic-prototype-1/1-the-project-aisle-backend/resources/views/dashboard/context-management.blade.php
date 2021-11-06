@@ -1,6 +1,12 @@
 @extends('layouts.base-template')
 @section('content')
 
+@foreach ($social_media_data as $key => $data)
+
+  echo $data->account_type
+
+@endforeach
+
     <div class="card card-tale" style="background-color:#e9ecef; color:black; margin-bottom:2%;  margin-top:2%;">
         <div class="card-body">
             <p class="fs-30 mb-2" style="text-align:center;">Context Manegement</p>
@@ -11,7 +17,7 @@
 
         @if($errors->any())
                 @foreach ($errors->all() as $error)
-                    
+
                 <div id="errorBox" style="text-align:center;margin-top:20px;" class="alert alert-danger col-md-12 alert-dismissible fade show" role="alert">
                     <strong>{!!$error!!}</strong>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -20,9 +26,9 @@
                 </div>
 
                 <script>
-                
+
                     setTimeout(
-                    function() 
+                    function()
                     {
                         $("#errorBox").delay(3000).fadeOut("slow");
 
@@ -44,9 +50,9 @@
         </div>
 
         <script>
-                
+
                 setTimeout(
-                function() 
+                function()
                 {
                     $("#successBox").delay(3000).fadeOut("slow");
 
@@ -62,9 +68,9 @@
 
         <h3 style="text-align:center;">Insert Context</h3>
         <hr class="my-4">
-  				
+
         <form action="/insert-context-data" class="login100-form validate-form" method="POST" enctype="multipart/form-data">
-        
+
             {{ csrf_field() }}
 
             <div class="form-group row">
@@ -73,7 +79,7 @@
                 <input type="text" class="form-control" id="context" name="context" placeholder="Context" required>
               </div>
             </div>
-    
+
             <div class="form-group row">
               <label for="description" class="col-sm-2 col-form-label">Description</label>
               <div class="col-sm-10">
@@ -84,7 +90,7 @@
             <input type="submit" value="Add" class="btn btn-success btn-lg btn-block">
 
         </form>
-        
+
     </div>
 
     <div style="overflow-x:auto;">
@@ -102,18 +108,18 @@
 
 
             @foreach ($context_data as $key => $data)
-        
+
                 <tr>
                     <th scope="row">{{ $key + 1 }}</th>
                     <td>{{$data->context}}</td>
                     <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">{{$data->description}}</td>
                     <td><a style="width:35%;" class="btn btn-danger btn-sm confirmation" href="/delete-context-data/{{$data->auto_id}}">Delete</a>&nbsp;</td>
                 </tr>
-        
+
             @endforeach
-            
-            
-            
+
+
+
             </tbody>
         </table>
 
@@ -126,7 +132,7 @@
             $('.confirmation').on('click', function () {
                 return confirm('Are you sure to delete?');
             });
-        } 
+        }
 
     </script>
 

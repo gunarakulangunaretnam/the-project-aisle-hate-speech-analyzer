@@ -56,7 +56,7 @@ class PageController extends Controller
       $all_context_names = DB::select("SELECT context FROM context_data");
 
       $keyword_data =  DB::table('knowledgebase')->get();
-    
+
       $session_type = Session::get('Session_Type');
 
       if($session_type == "Admin"){
@@ -105,6 +105,24 @@ class PageController extends Controller
         return Redirect::to("/");
 
       }
+
+    }
+
+    public function ViewSocialMediaDataEditPageController($auto_id){
+
+        $session_type = Session::get('Session_Type');
+
+        $social_mediaind_ividual_data = DB::table('social_media')->where('auto_id', '=', $auto_id)->get();
+
+        if($session_type == "Admin"){
+
+          return view('dashboard/social-media-data-edit')->with('social_mediaind_ividual_data', $social_mediaind_ividual_data);
+
+        }else{
+
+          return Redirect::to("/");
+
+        }
 
 
     }

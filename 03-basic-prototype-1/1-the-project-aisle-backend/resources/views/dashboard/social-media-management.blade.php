@@ -180,7 +180,7 @@
                             <td>{{$data->language}}</td>
                             <td>{{$data->number_of_time_tested}}</td>
                             <td style="vertical-align: middle; line-height: 1; white-space: normal; line-height:120%;">{{$data->remarks}}</td>
-                            <td><a class="btn btn-danger btn-sm confirmation" href="/delete-social-media-data/{{$data->auto_id}}">Delete</a> <a class="btn btn-success btn-sm confirmation" href="/delete-keyword-data/{{$data->auto_id}}">Edit</a></td>
+                            <td><a class="btn btn-danger btn-sm confirmation" href="/delete-social-media-data/{{$data->auto_id}}">Delete</a> <a class="btn btn-success btn-sm" href="/view-social-media-data-edit-page/{{$data->auto_id}}">Edit</a></td>
                         </tr>
 
                     @endforeach

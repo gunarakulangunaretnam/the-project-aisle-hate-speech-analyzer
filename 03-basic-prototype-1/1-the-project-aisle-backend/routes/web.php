@@ -45,3 +45,5 @@ Route::GET('/view-social-media-management', [PageController::class, 'ViewSocialM
 Route::POST('/insert-social-media-data', [DatabaseController::class, 'InsertSocialMediaDataController']);
 
 Route::GET('/delete-social-media-data/{auto_id}', [DatabaseController::class, 'DeleteSocialMediaDataController']);
+
+Route::GET('/view-social-media-data-edit-page/{auto_id}', [PageController::class, 'ViewSocialMediaDataEditPageController']);
