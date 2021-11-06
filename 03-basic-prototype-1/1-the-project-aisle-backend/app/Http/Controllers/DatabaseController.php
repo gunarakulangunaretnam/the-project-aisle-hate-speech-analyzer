@@ -135,9 +135,15 @@ class DatabaseController extends Controller
             $language     =  $request->language;
             $remarks      =  $request->remarks;
 
+            if($main_user == ""){
+
+              $main_user = "[NULL]";
+            }
+
             if($remarks == ""){
 
-                $remarks = "[NULL]";
+              $remarks = "[NULL]";
+
             }
 
             if(DB::insert('INSERT INTO social_media (social_media, account_name, account_type, url, network_size, main_user_name, language, remarks, number_of_time_tested) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$social_media, $account_name, $account_type, $url, $network_size, $main_user, $language, $remarks, "0"])){
@@ -174,7 +180,7 @@ class DatabaseController extends Controller
 
     }
 
-    public function EditSocialMediaDataController($auto_id){
+    public function EditSocialMediaDataController($auto_id, Request $request){
 
       $session_type = Session::get('Session_Type');
 
@@ -197,11 +203,22 @@ class DatabaseController extends Controller
         $language     =  $request->language;
         $remarks      =  $request->remarks;
 
-        $status =  DB::table('users')->where('auto_id', $auto_id)->update(['social_media' => $social_media, 'account_name' => $account_name, 'account_name' => $account_type, 'url' => $url, 'network_size' => $network_size, 'main_user_name'=> $main_user, 'language' => $language, 'remarks' => $remarks]);
+        if($main_user == ""){
 
-        if(status){
+          $main_user = "[NULL]";
+        }
 
-            return redirect()->back()->with('message', 'Data Deleted Successfully.');
+        if($remarks == ""){
+
+          $remarks = "[NULL]";
+
+        }
+
+        $status =  DB::table('social_media')->where('auto_id', $auto_id)->update(['social_media' => $social_media, 'account_name' => $account_name, 'account_name' => $account_type, 'url' => $url, 'network_size' => $network_size, 'main_user_name'=> $main_user, 'language' => $language, 'remarks' => $remarks]);
+
+        if($status){
+
+            return Redirect::to("/view-social-media-management")->with('message', 'Data Updated Successfully.');;
         }
 
       }else{

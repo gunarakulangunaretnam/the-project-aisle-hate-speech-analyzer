@@ -130,11 +130,11 @@
 
       if(language == "Sinhala"){
 
-        document.getElementById("language").selectedIndex = 1;
+        document.getElementById("language").selectedIndex = 0;
 
       }else if(language == "Tamil"){
 
-        document.getElementById("language").selectedIndex = 0;
+        document.getElementById("language").selectedIndex = 1;
 
       }
 
