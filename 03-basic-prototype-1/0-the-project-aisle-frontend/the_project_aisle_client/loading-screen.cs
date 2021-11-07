@@ -30,7 +30,7 @@ namespace the_project_aisle_client
                 using (StreamWriter writetext = new StreamWriter("csharp-input.txt"))
                 {
 
-                    writetext.WriteLine("[NULL] | [NULL] | [NULL]");
+                    writetext.WriteLine("[NULL] | [NULL] | [NULL] | [NULL]");
 
                 }
 

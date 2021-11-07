@@ -132,7 +132,7 @@ namespace the_project_aisle_client
             {
                 using (StreamWriter writetext = new StreamWriter("csharp-input.txt"))
                 {
-                    writetext.WriteLine("[EXIT] | [EXIT] | [EXIT]");
+                    writetext.WriteLine("[EXIT] | [EXIT] | [EXIT] | [EXIT]");
                 }
             }
             catch (Exception err)
@@ -198,12 +198,13 @@ namespace the_project_aisle_client
 
                 string accountName = bunifuCustomDataGrid1.Rows[Convert.ToInt32(selectedRowIndex)].Cells[2].Value.ToString();
                 string accountType = bunifuCustomDataGrid1.Rows[Convert.ToInt32(selectedRowIndex)].Cells[3].Value.ToString();
+                string language    = bunifuCustomDataGrid1.Rows[Convert.ToInt32(selectedRowIndex)].Cells[6].Value.ToString();
 
                 try
                 {
                     using (StreamWriter writetext = new StreamWriter("csharp-input.txt"))
                     {
-                        writetext.WriteLine("[MESSAGE] | " + accountName + " | " + accountType);
+                        writetext.WriteLine("[MESSAGE] | " + accountName + " | " + accountType + " | "+ language);
                     }
                 }
                 catch (Exception err)

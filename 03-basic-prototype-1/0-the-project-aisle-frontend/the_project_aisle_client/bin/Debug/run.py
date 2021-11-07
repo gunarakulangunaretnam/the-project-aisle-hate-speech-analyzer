@@ -14,16 +14,16 @@ engine.setProperty('voice', en_voice_id)
 rate = engine.getProperty('rate')
 engine.setProperty('rate', rate - 20)
 
+
 def kill_current_process():
     os.kill(os.getpid(), signal.SIGTERM) #or signal.SIGKILL 
-
 
 def on_press(key):
 
     if str(key).strip() == "'\\x03'":
         time.sleep(1)
         copyText = pyperclip.paste()
-        print(copyText)
+        
 
 
     #currentTime = now.strftime("%I:%M:%S %p")
@@ -33,7 +33,7 @@ def on_press(key):
 def talk_function(audio):
     if engine._inLoop:
         engine.endLoop()
-        
+
     print("Computer: {}".format(audio))
     engine.say(audio)
     engine.runAndWait()
@@ -41,7 +41,7 @@ def talk_function(audio):
 
 def change_csharp_input_to_normal():
     file = open("csharp-input.txt", "w")                      
-    file.write("[NULL] | [NULL] | [NULL]") 
+    file.write("[NULL] | [NULL] | [NULL] | [NULL]") 
     file.close()
 
 
@@ -61,7 +61,7 @@ def input_listener_from_csharp():
           elif split_read_data[0].strip() == "[MESSAGE]":
             file.close()
             change_csharp_input_to_normal() # Change to [NULL]
-            thread2 = threading.Thread(target=talk_function, args=(f"Start processing on {split_read_data[1].strip()} {split_read_data[2].strip()}.",))
+            thread2 = threading.Thread(target=talk_function, args=(f"Start processing on {split_read_data[1].strip()} {split_read_data[2].strip()} in {split_read_data[3].strip()} language.",))
             thread2.start()
         
           else:

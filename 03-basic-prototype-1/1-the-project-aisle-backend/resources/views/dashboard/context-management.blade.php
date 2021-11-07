@@ -1,12 +1,6 @@
 @extends('layouts.base-template')
 @section('content')
 
-@foreach ($social_media_data as $key => $data)
-
-  echo $data->account_type
-
-@endforeach
-
     <div class="card card-tale" style="background-color:#e9ecef; color:black; margin-bottom:2%;  margin-top:2%;">
         <div class="card-body">
             <p class="fs-30 mb-2" style="text-align:center;">Context Manegement</p>
