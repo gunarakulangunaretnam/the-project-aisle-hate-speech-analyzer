@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Diagnostics;
+using System.IO;
 
 namespace the_project_aisle_client
 {
@@ -34,6 +36,10 @@ namespace the_project_aisle_client
 
             }
             
+        }
+
+        public void startPythonProgram() {
+            System.Diagnostics.Process.Start(@"run.bat");
         }
 
         public void getAllDataForSelector(string socialMedia)
@@ -116,9 +122,25 @@ namespace the_project_aisle_client
             InitializeComponent();
         }
 
+
+
+
         private void label1_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            try
+            {
+                using (StreamWriter writetext = new StreamWriter("csharp-input.txt"))
+                {
+                    writetext.WriteLine("[EXIT] | [EXIT] | [EXIT]");
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+            
+            System.Windows.Forms.Application.Exit();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -153,7 +175,7 @@ namespace the_project_aisle_client
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-        
+            startPythonProgram();
             getSocialMediaNames(); 
         }
 
@@ -174,6 +196,24 @@ namespace the_project_aisle_client
             }
             else {
 
+                string accountName = bunifuCustomDataGrid1.Rows[Convert.ToInt32(selectedRowIndex)].Cells[2].Value.ToString();
+                string accountType = bunifuCustomDataGrid1.Rows[Convert.ToInt32(selectedRowIndex)].Cells[3].Value.ToString();
+
+                try
+                {
+                    using (StreamWriter writetext = new StreamWriter("csharp-input.txt"))
+                    {
+                        writetext.WriteLine("[MESSAGE] | " + accountName + " | " + accountType);
+                    }
+                }
+                catch (Exception err)
+                {
+
+                    Console.WriteLine(err.Message);
+
+                }
+               
+
                 string url = bunifuCustomDataGrid1.Rows[Convert.ToInt32(selectedRowIndex)].Cells[4].Value.ToString();
             
                 var psi = new System.Diagnostics.ProcessStartInfo();
@@ -183,8 +223,7 @@ namespace the_project_aisle_client
 
                 this.WindowState = FormWindowState.Minimized;
 
-
-
+   
             }
         }
 
