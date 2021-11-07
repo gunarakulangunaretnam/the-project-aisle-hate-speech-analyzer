@@ -26,6 +26,11 @@ class DatabaseController extends Controller
             $context =  $request->context;
             $description =  $request->description;
 
+            if($description == ""){
+
+              $description = "[NULL]";
+            }
+
             if(DB::insert('INSERT INTO context_data (context, description) values ( ?, ?)', [$context, $description])){
 
                 return redirect()->back()->with('message', 'Data Inserted Successfully.');
@@ -96,6 +101,12 @@ class DatabaseController extends Controller
             $context_tags =  $request->context_tags;
             $language =  $request->language;
             $description =  $request->description;
+
+            if($description == ""){
+
+              $description = "[NULL]";
+
+            }
 
             if(DB::insert('INSERT INTO knowledgebase (keyword, context_tags, language, description) values ( ?, ?, ?, ?)', [$keyword, json_encode($context_tags), $language, $description])){
 
