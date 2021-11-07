@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="card card-tale" style="background-color:#e9ecef; color:black; margin-bottom:2%;  margin-top:2%;">
     <div class="card-body">
         <p class="fs-30 mb-2" style="text-align:center;">Sinhala Language Top 10 Trendings</p>

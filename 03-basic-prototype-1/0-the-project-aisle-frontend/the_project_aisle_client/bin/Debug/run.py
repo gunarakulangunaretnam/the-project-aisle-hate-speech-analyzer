@@ -66,7 +66,7 @@ def on_press(key):
 
         current_date_object = datetime.today()
 
-        current_date = current_date_object.strftime('%m-%d-%Y')
+        current_date = current_date_object.strftime('%Y-%m-%d')
         current_time = current_date_object.strftime('%H:%M:%S')
 
         hate_words_list_str = str(hate_words_list).replace("'","")
