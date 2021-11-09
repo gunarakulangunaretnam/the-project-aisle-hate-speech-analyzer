@@ -137,12 +137,12 @@ class PageController extends Controller
       $SinhalaKeywordsData = $this->TopTenKeywordsProcessing("Sinhala");
       $TamilKeywordsData   = $this->TopTenKeywordsProcessing("Tamil");
 
-    
+
       $session_type = Session::get('Session_Type');
 
       if($session_type == "Admin"){
 
-        return view('dashboard/home-page')->with(["SinhalaKeywordsData" => $SinhalaKeywordsData]);
+        return view('dashboard/home-page')->with(["SinhalaKeywordsData" => $SinhalaKeywordsData, "TamilKeywordsData" => $TamilKeywordsData]);
 
       }else{
 

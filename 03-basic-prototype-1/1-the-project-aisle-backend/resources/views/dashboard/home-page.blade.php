@@ -227,8 +227,6 @@
                         <hr>
                         <div class="charts-data">
 
-
-
                         @foreach($SinhalaKeywordsData as $data)
                             @foreach($data as $sub_data)
                             <div class="mt-3">
@@ -582,96 +580,23 @@
                         <p class="card-title" style="text-align:center;">Top 10 Trending Words</p>
                         <hr>
                         <div class="charts-data">
-                        <div class="mt-3">
-                            <p class="mb-0">Data 1</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="progress progress-md flex-grow-1 mr-4">
-                                <div class="progress-bar bg-inf0" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="mb-0">5k</p>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <p class="mb-0">Data 2</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="progress progress-md flex-grow-1 mr-4">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="mb-0">1k</p>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <p class="mb-0">Data 3</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="progress progress-md flex-grow-1 mr-4">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 48%" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="mb-0">992</p>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <p class="mb-0">Data 4</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="progress progress-md flex-grow-1 mr-4">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="mb-0">687</p>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <p class="mb-0">Data 4</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="progress progress-md flex-grow-1 mr-4">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="mb-0">687</p>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <p class="mb-0">Data 4</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="progress progress-md flex-grow-1 mr-4">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="mb-0">687</p>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <p class="mb-0">Data 4</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="progress progress-md flex-grow-1 mr-4">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="mb-0">687</p>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <p class="mb-0">Data 4</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="progress progress-md flex-grow-1 mr-4">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="mb-0">687</p>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <p class="mb-0">Data 4</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="progress progress-md flex-grow-1 mr-4">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="mb-0">687</p>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <p class="mb-0">Data 4</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                            <div class="progress progress-md flex-grow-1 mr-4">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <p class="mb-0">687</p>
-                            </div>
-                        </div>
+
+                          @foreach($TamilKeywordsData as $data)
+                              @foreach($data as $sub_data)
+                              <div class="mt-3">
+                                  <p class="mb-0">{{$sub_data[0]}}</p>
+                                  <div class="d-flex justify-content-between align-items-center">
+                                    <div class="progress progress-md flex-grow-1 mr-4">
+                                        <div class="progress-bar bg-inf0" role="progressbar" style="width: {{$sub_data[2]}}%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                  <p class="mb-0">{{$sub_data[1]}}</p>
+                                  </div>
+                              </div>
+
+
+                              @endforeach
+                          @endforeach
+
                         </div>
                     </div>
                     </div>
