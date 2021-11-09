@@ -64,7 +64,7 @@ class PageController extends Controller
 
           }
 
-          array_push($all_available_keywords_with_duplicate,trim($peice));  // Add the keyword to the duplication array.
+          array_push($all_available_keywords_with_duplicate,trim($keyword_pieces));  // Add the keyword to the duplication array.
 
         }
       }
@@ -105,7 +105,6 @@ class PageController extends Controller
 
       $total_number_of_keywords = 0;
 
-
       for ($i = 1; $i <= $number_of_times_to_run; $i++) { // Loop based on number_of_times_to_run
 
         $key = array_search(max($all_available_keywords_with_length), $all_available_keywords_with_length);  // Get max number, then get the key of it.
@@ -127,22 +126,112 @@ class PageController extends Controller
 
       }
 
+      return [$final_array];
+
+    }
+
+    public function TopTenHateSpeechSpreaders($Language){
+
+      $MinDate = date('Y-m-d', strtotime('-30 day', strtotime(date('Y-m-d'))));   //Get Current date and subtract 30 days from it.
+      $MaxDate = date('Y-m-d'); // Max date
+
+      $all_available_hate_speech_spreaders = [];                    //  Store all hate speech spreaders without duplication
+      $all_available_hate_speech_spreaders_with_duplicate = [];    //   Store all hate speech spreaders with duplication
+
+      $all_available_hate_speech_spreaders_with_length = [];      //   Associative array that contains all hate_speech_spreaders with length.
+      $all_available_hate_speech_spreaders_with_length_filtered_top_ten = [];  //Store hate_speech_spreaders top ten keywords.
+
+      $all_data1 = DB::select("SELECT DISTINCT processed_data.account_id FROM processed_data, social_media WHERE processed_data.account_id = social_media.account_name AND social_media.language = '$Language' AND analyzed_date BETWEEN '$MinDate' AND '$MaxDate' AND result = '[HATE]'"); // SQL-CODE
+
+      foreach ($all_data1 as $key => $data) {
+
+          array_push($all_available_hate_speech_spreaders, $data->account_id); // Rem
+
+      }
+
+      $all_data2 = DB::select("SELECT processed_data.account_id FROM processed_data, social_media WHERE processed_data.account_id = social_media.account_name AND social_media.language = '$Language' AND analyzed_date BETWEEN '$MinDate' AND '$MaxDate' AND result = '[HATE]'"); // SQL-CODE
+
+      foreach ($all_data2 as $key => $data) {
+
+          array_push($all_available_hate_speech_spreaders_with_duplicate, $data->account_id); // Rem
+
+      }
+
+      foreach ($all_available_hate_speech_spreaders as $key => $data) {
+
+        $temp_data = $data;   // Store one keyword to the tamp variable.
+        $temp_length = 0;    // Create a variable as 0.
+
+
+        foreach ($all_available_hate_speech_spreaders_with_duplicate as $key => $sub_data) {
+
+          if($temp_data == $sub_data){
+
+            $temp_length = $temp_length + 1;
+
+          }
+
+        }
+
+        $all_available_hate_speech_spreaders_with_length[$temp_data] = $temp_length;
+
+      }
+
+      $number_of_times_to_run = 0;
+
+      if(count($all_available_hate_speech_spreaders_with_length) < 10){ // If all_available_keywords_with_length less than 10, then number of times to run is as usual.
+
+        $number_of_times_to_run = count($all_available_hate_speech_spreaders_with_length);
+
+      }else{ // Otherwise, it is ten.
+
+        $number_of_times_to_run = 10;
+
+      }
+
+      $total_number_of_hate_speech_spreaders = 0;
+
+      for ($i = 1; $i <= $number_of_times_to_run; $i++) { // Loop based on number_of_times_to_run
+
+        $key = array_search(max($all_available_hate_speech_spreaders_with_length), $all_available_hate_speech_spreaders_with_length);  // Get max number, then get the key of it.
+        $all_available_hate_speech_spreaders_with_length_filtered_top_ten[$key] = $all_available_hate_speech_spreaders_with_length[$key];
+
+        $total_number_of_hate_speech_spreaders = $total_number_of_hate_speech_spreaders + $all_available_hate_speech_spreaders_with_length[$key]; // Add total keywords to calculate the percentage.
+
+        unset($all_available_hate_speech_spreaders_with_length[$key]);  // Remove the max to find the next max number
+
+      }
+
+      $final_array = [];
+
+      foreach ($all_available_hate_speech_spreaders_with_length_filtered_top_ten as $key => $data) {  // Checking percentage
+
+        $per = ($data / $total_number_of_hate_speech_spreaders) * 100;
+
+        array_push($final_array,[$key, $data,$per]);
+
+      }
+
+      print_r($final_array);
 
       return [$final_array];
 
-  }
+    }
 
     public function ViewDashboardPageController(){
 
       $SinhalaKeywordsData = $this->TopTenKeywordsProcessing("Sinhala");
       $TamilKeywordsData   = $this->TopTenKeywordsProcessing("Tamil");
 
+      $SinhalaHateSpeechSpreadersData = $this->TopTenHateSpeechSpreaders("Sinhala");
+      $TamilHateSpeechSpreadersData   = $this->TopTenHateSpeechSpreaders("Tamil");
+
 
       $session_type = Session::get('Session_Type');
 
       if($session_type == "Admin"){
 
-        return view('dashboard/home-page')->with(["SinhalaKeywordsData" => $SinhalaKeywordsData, "TamilKeywordsData" => $TamilKeywordsData]);
+        return view('dashboard/home-page')->with(["SinhalaKeywordsData" => $SinhalaKeywordsData, "TamilKeywordsData" => $TamilKeywordsData, "SinhalaHateSpeechSpreadersData" => $SinhalaHateSpeechSpreadersData, "TamilHateSpeechSpreadersData" => $TamilHateSpeechSpreadersData]);
 
       }else{
 
