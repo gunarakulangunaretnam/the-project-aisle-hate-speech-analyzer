@@ -49,3 +49,5 @@ Route::GET('/delete-social-media-data/{auto_id}', [DatabaseController::class, 'D
 Route::GET('/view-social-media-data-edit-page/{auto_id}', [PageController::class, 'ViewSocialMediaDataEditPageController']);
 
 Route::POST('/edit-social-media-data/{auto_id}', [DatabaseController::class, 'EditSocialMediaDataController']);
+
+Route::GET('/view-analytics-ranking-page/', [PageController::class, 'ViewAnalyticsRankingPage']);

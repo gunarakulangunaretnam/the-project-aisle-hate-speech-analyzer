@@ -29,13 +29,13 @@
 
   </style>
 
-  
+
 </head>
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      
+
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo mr-5" href="/view-dashboard"><img src="{{asset('dashboard-page-asset')}}/images/logo.png" style="width: 150px; height: 46px;" class="mr-2" alt="logo"/></a>
         <a class="navbar-brand brand-logo-mini" href="/view-dashboard"><img src="{{asset('dashboard-page-asset')}}/images/logo-mini.png" style="width: 40px;" alt="logo"/></a>
@@ -83,6 +83,11 @@
               <span class="menu-title">Analytics</span>
               <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/view-analytics-ranking-page">Rankings</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
@@ -107,11 +112,11 @@
       </nav>
       <!-- partial -->
       <div class="main-panel">
-        
+
 
             @yield('content')
 
-      
+
       </div>
   </div>
 
@@ -146,4 +151,3 @@
 </body>
 
 </html>
-

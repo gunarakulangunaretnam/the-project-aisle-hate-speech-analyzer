@@ -4,7 +4,7 @@
 
 <div class="card card-tale" style="background-color:#e9ecef; color:black; margin-bottom:2%;  margin-top:2%;">
     <div class="card-body">
-        <p class="fs-30 mb-2" style="text-align:center;">Sinhala Language Top 10 Trendings</p>
+        <p class="fs-30 mb-2" style="text-align:center;">Sinhala Language Rankings</p>
     </div>
 </div>
 
@@ -14,7 +14,7 @@
       <div class="card" style="background-color:#ebeff5;">
         <div class="card-body">
 
-        <p class="card-title" style="text-align:center;">Top 10 Hate Speech Spreaders</p>
+        <p class="card-title" style="text-align:center;">Hate Speech Spreaders</p>
 
           <hr>
 
@@ -57,7 +57,7 @@
                 <div class="col-md-12 grid-margin stretch-card">
                     <div class="card" style="background-color:#ebeff5;">
                       <div class="card-body">
-                          <p class="card-title" style="text-align:center;">Top 10 Trending Keywords</p>
+                          <p class="card-title" style="text-align:center;">Trending Keywords</p>
                           <hr>
                           <div class="charts-data row">
 
@@ -98,7 +98,7 @@
 
 <div class="card card-tale" style="background-color:#e9ecef; color:black; margin-bottom:2%;  margin-top:2%;">
     <div class="card-body">
-        <p class="fs-30 mb-2" style="text-align:center;">Tamil Language Top 10 Trendings</p>
+        <p class="fs-30 mb-2" style="text-align:center;">Tamil Language Rankings</p>
     </div>
 </div>
 
@@ -107,7 +107,7 @@
 <div class="col-md-6 grid-margin">
       <div class="card" style="background-color:#ebeff5;">
         <div class="card-body">
-          <p class="card-title" style="text-align:center;">Top 10 Hate Speech Spreaders</p>
+          <p class="card-title" style="text-align:center;">Hate Speech Spreaders</p>
 
           <hr>
 
@@ -151,7 +151,7 @@
                     <div class="card" style="background-color:#ebeff5;">
 
                         <div class="card-body">
-                          <p class="card-title" style="text-align:center;">Top 10 Trending Keywords</p>
+                          <p class="card-title" style="text-align:center;">Trending Keywords</p>
                           <hr>
                           <div class="charts-data row">
 
@@ -175,8 +175,6 @@
                                     </div>
                                     <p class="mb-0">{{$sub_data[1]}} (Repeated)</p>
                                 </div>
-
-
 
                               @endforeach
                           @endforeach
