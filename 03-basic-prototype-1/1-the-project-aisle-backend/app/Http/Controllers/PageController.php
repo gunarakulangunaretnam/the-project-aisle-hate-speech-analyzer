@@ -130,7 +130,7 @@ class PageController extends Controller
 
     }
 
-    public function TopTenHateSpeechSpreaders($Language){
+    public function TopTenHateSpeechSpreadersProcessing($Language){
 
       $MinDate = date('Y-m-d', strtotime('-30 day', strtotime(date('Y-m-d'))));   //Get Current date and subtract 30 days from it.
       $MaxDate = date('Y-m-d'); // Max date
@@ -223,8 +223,8 @@ class PageController extends Controller
       $SinhalaKeywordsData = $this->TopTenKeywordsProcessing("Sinhala");
       $TamilKeywordsData   = $this->TopTenKeywordsProcessing("Tamil");
 
-      $SinhalaHateSpeechSpreadersData = $this->TopTenHateSpeechSpreaders("Sinhala");
-      $TamilHateSpeechSpreadersData   = $this->TopTenHateSpeechSpreaders("Tamil");
+      $SinhalaHateSpeechSpreadersData = $this->TopTenHateSpeechSpreadersProcessing("Sinhala");
+      $TamilHateSpeechSpreadersData   = $this->TopTenHateSpeechSpreadersProcessing("Tamil");
 
 
       $session_type = Session::get('Session_Type');
