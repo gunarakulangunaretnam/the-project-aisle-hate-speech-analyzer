@@ -280,13 +280,13 @@ class PageController extends Controller
 
         }else{ // if no comma, that means, there is only one element.
 
-          if(in_array(trim($keyword_pieces), $all_available_keywords) == false){ // Check if it already in the all_available_keywords. if does not, then
+          if(in_array(trim($keyword_list_str), $all_available_keywords) == false){ // Check if it already in the all_available_keywords. if does not, then
 
-            array_push($all_available_keywords,trim($keyword_pieces));  // Add the keyword to the list.
+            array_push($all_available_keywords,trim($keyword_list_str));  // Add the keyword to the list.
 
           }
 
-          array_push($all_available_keywords_with_duplicate,trim($keyword_pieces));  // Add the keyword to the duplication array.
+          array_push($all_available_keywords_with_duplicate,trim($keyword_list_str));  // Add the keyword to the duplication array.
 
         }
       }
