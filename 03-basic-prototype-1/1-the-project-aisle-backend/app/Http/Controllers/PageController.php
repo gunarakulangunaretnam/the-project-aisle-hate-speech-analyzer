@@ -29,6 +29,8 @@ class PageController extends Controller
 
       $all_data = DB::select("SELECT * FROM processed_data, social_media WHERE processed_data.account_id = social_media.account_name AND social_media.language = '$Language' AND analyzed_date BETWEEN '$MinDate' AND '$MaxDate' AND result = '[HATE]'"); // SQL-CODE
 
+
+
       $all_available_keywords = [];                 //  Store all keywords without duplication
       $all_available_keywords_with_duplicate = []; //   Store all keywords with duplication
 
@@ -58,13 +60,13 @@ class PageController extends Controller
 
         }else{ // if no comma, that means, there is only one element.
 
-          if(in_array(trim($keyword_pieces), $all_available_keywords) == false){ // Check if it already in the all_available_keywords. if does not, then
+          if(in_array(trim($keyword_list_str), $all_available_keywords) == false){ // Check if it already in the all_available_keywords. if does not, then
 
-            array_push($all_available_keywords,trim($keyword_pieces));  // Add the keyword to the list.
+            array_push($all_available_keywords,trim($keyword_list_str));  // Add the keyword to the list.
 
           }
 
-          array_push($all_available_keywords_with_duplicate,trim($keyword_pieces));  // Add the keyword to the duplication array.
+          array_push($all_available_keywords_with_duplicate,trim($keyword_list_str));  // Add the keyword to the duplication array.
 
         }
       }
