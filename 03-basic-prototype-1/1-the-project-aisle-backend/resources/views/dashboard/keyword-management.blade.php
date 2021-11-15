@@ -1,6 +1,6 @@
 @extends('layouts.base-template')
 @section('content')
-   
+
 
     <div class="card card-tale" style="background-color:#e9ecef; color:black; margin-bottom:2%;  margin-top:2%;">
         <div class="card-body">
@@ -12,7 +12,7 @@
 
             @if($errors->any())
                 @foreach ($errors->all() as $error)
-                    
+
                     <div id="errorBox" style="text-align:center;margin-top:20px;" class="alert alert-danger col-md-12 alert-dismissible fade show" role="alert">
                         <strong>{!!$error!!}</strong>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -21,9 +21,9 @@
                     </div>
 
                     <script>
-                    
+
                         setTimeout(
-                        function() 
+                        function()
                         {
                             $("#errorBox").delay(3000).fadeOut("slow");
 
@@ -45,9 +45,9 @@
             </div>
 
             <script>
-                    
+
                     setTimeout(
-                    function() 
+                    function()
                     {
                         $("#successBox").delay(3000).fadeOut("slow");
 
@@ -64,9 +64,9 @@
 
         <h3 style="text-align:center;">Insert Keywords</h3>
         <hr class="my-4">
-  				
+
         <form action="/insert-keyword-data" class="login100-form validate-form" method="POST" enctype="multipart/form-data">
-        
+
             {{ csrf_field() }}
 
             <div class="form-group row">
@@ -80,15 +80,15 @@
                 <label for="context_tags" class="col-sm-2 col-form-label">Context Tags</label>
                 <div class="col-sm-10">
                     <select style="height:300px; !important" data-placeholder="Context Tags" id="context_tags" name="context_tags[]" multiple class="chosen-select form-control" required>
-                        
+
                         <option value=""></option>
 
                         @foreach ($all_context_names as $key => $data)
-    
+
                             <option>{{$data->context}}</option>
 
                         @endforeach
-                        
+
                     </select>
                 </div>
             </div>
@@ -104,7 +104,7 @@
             </div>
             </div>
 
-         
+
             <div class="form-group row">
               <label for="description" class="col-sm-2 col-form-label">Description</label>
               <div class="col-sm-10">
@@ -115,10 +115,10 @@
             <input type="submit" value="Add" class="btn btn-success btn-lg btn-block">
 
         </form>
-        
+
     </div>
 
-    
+
     <div style="overflow-x:auto;">
 
         <table class="table table-hover" style="background-color:#e9ecef; color:black; margin-bottom:3%;">
@@ -132,7 +132,7 @@
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
-            <tbody> 
+            <tbody>
                     @foreach ($keyword_data as $key => $data)
 
                         <tr>
@@ -147,13 +147,13 @@
                     @endforeach
             </tbody>
         </table>
-        
+
     </div>
 
     <script>
 
         window.onload = function(){
-            
+
             $(".chosen-select").chosen({
                 no_results_text: "Oops, nothing found!"
             })
@@ -161,8 +161,8 @@
             $('.confirmation').on('click', function () {
                 return confirm('Are you sure to delete?');
             });
-            
-        } 
+
+        }
 
     </script>
 

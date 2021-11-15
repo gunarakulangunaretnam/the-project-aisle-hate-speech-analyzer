@@ -7,7 +7,7 @@
 
 @if($errors->any())
 		@foreach ($errors->all() as $error)
-            
+
         <div id="errorBox" style="text-align:center;margin-top:20px;" class="alert alert-danger col-md-12 alert-dismissible fade show" role="alert">
                     <strong>{!!$error!!}</strong>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -20,7 +20,7 @@
                 window.onload=function(){
 
                     $("#errorBox").delay(3000).fadeOut("slow");
-               
+
                 }
 
             </script>
@@ -34,9 +34,9 @@
 <div class="jumbotron">
         <h4 style="text-align:center;">Password Settings</h4>
         <hr class="my-4">
-  				
+
         <form action="/change-password" class="login100-form validate-form" method="POST" enctype="multipart/form-data">
-        
+
             {{ csrf_field() }}
 
             <div class="form-group row">
@@ -64,7 +64,7 @@
             <input type="submit" value="Change Password" class="btn btn-success btn-lg btn-block">
 
         </form>
-        
+
 </div>
 
 @endsection

@@ -42,6 +42,7 @@ def on_press(key):
     if str(key).strip() == "'\\x03'":
         time.sleep(1)
         target_text = pyperclip.paste()
+        target_text = target_text.replace("'","")
 
         hate_words_list = []
         result = "[NON-HATE]"
@@ -91,7 +92,7 @@ def on_press(key):
                 text1 = "is"
                 text2 = "keyword"
 
-            thread3 = threading.Thread(target=talk_function, args=(f"Warning, Hate speech is identified. There {text1} {number_of_hate_words} hate {text2} found.",))
+            thread3 = threading.Thread(target=talk_function, args=(f"Warning, {number_of_hate_words} hate {text2} found.",))
             thread3.start()
 
         else:
@@ -99,9 +100,6 @@ def on_press(key):
             thread3.start()
 
  
-
-
-
 
 def database_loader():
     global tamil_knowledgebase, keyword_sinhala_data

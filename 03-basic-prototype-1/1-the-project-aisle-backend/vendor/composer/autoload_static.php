@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1ffc6dcd726d61cdea8c68a8f38bdbf3
+class ComposerStaticInit50efa92619effe893100c3cf7f9d8357
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -36,6 +36,7 @@ class ComposerStaticInit1ffc6dcd726d61cdea8c68a8f38bdbf3
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -166,6 +167,7 @@ class ComposerStaticInit1ffc6dcd726d61cdea8c68a8f38bdbf3
         'C' => 
         array (
             'Cron\\' => 5,
+            'Collective\\Html\\' => 16,
             'Carbon\\' => 7,
         ),
         'B' => 
@@ -492,6 +494,10 @@ class ComposerStaticInit1ffc6dcd726d61cdea8c68a8f38bdbf3
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+        'Collective\\Html\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravelcollective/html/src',
+        ),
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
@@ -524,6 +530,9 @@ class ComposerStaticInit1ffc6dcd726d61cdea8c68a8f38bdbf3
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DatabaseController' => __DIR__ . '/../..' . '/app/Http/Controllers/DatabaseController.php',
+        'App\\Http\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/PageController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -630,6 +639,13 @@ class ComposerStaticInit1ffc6dcd726d61cdea8c68a8f38bdbf3
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
+        'Collective\\Html\\Eloquent\\FormAccessible' => __DIR__ . '/..' . '/laravelcollective/html/src/Eloquent/FormAccessible.php',
+        'Collective\\Html\\FormBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/FormBuilder.php',
+        'Collective\\Html\\FormFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/FormFacade.php',
+        'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
+        'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
+        'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
@@ -5500,10 +5516,10 @@ class ComposerStaticInit1ffc6dcd726d61cdea8c68a8f38bdbf3
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1ffc6dcd726d61cdea8c68a8f38bdbf3::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1ffc6dcd726d61cdea8c68a8f38bdbf3::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit1ffc6dcd726d61cdea8c68a8f38bdbf3::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit1ffc6dcd726d61cdea8c68a8f38bdbf3::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit50efa92619effe893100c3cf7f9d8357::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit50efa92619effe893100c3cf7f9d8357::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit50efa92619effe893100c3cf7f9d8357::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit50efa92619effe893100c3cf7f9d8357::$classMap;
 
         }, null, ClassLoader::class);
     }
