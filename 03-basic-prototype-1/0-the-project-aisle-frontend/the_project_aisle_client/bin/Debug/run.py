@@ -50,14 +50,14 @@ def on_press(key):
         if processing_language.lower() == "tamil":
             
             for word in tamil_knowledgebase:
-                if word.strip() in target_text:
+                if word in target_text.strip().lower():
                     hate_words_list.append(word)
                     result = "[HATE]"
 
         elif processing_language.lower() == "sinhala":
 
             for word in sinhala_knowledgebase:
-                if word.strip() in target_text:
+                if word in target_text.strip().lower():
                     hate_words_list.append(word)
                     result = "[HATE]"
 
@@ -109,14 +109,15 @@ def database_loader():
     mydb.commit()
 
     for words in keyword_tamil_data:
-        tamil_knowledgebase.append(words[0])
+        tamil_knowledgebase.append(words[0].strip().lower())
 
     SelectDataCursor.execute("SELECT keyword FROM knowledgebase WHERE  language = 'Sinhala'")
     keyword_sinhala_data = SelectDataCursor.fetchall()
     mydb.commit()
 
     for words in keyword_sinhala_data:
-        sinhala_knowledgebase.append(words[0])
+        sinhala_knowledgebase.append(words[0].strip().lower())
+        print(words[0].strip().lower())
 
 
 def talk_function(audio):
