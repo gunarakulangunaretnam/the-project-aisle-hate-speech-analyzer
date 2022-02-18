@@ -51,3 +51,5 @@ C:\xampp\htdocs\the-project-aisle\03-basic-prototype-1\0-the-project-aisle-front
 C:\xampp\htdocs\the-project-aisle\03-basic-prototype-1\0-the-project-aisle-frontend\the_project_aisle_client\obj\Debug\the_project_aisle_client.MainForm.resources
 C:\xampp\htdocs\the-project-aisle\03-basic-prototype-1\0-the-project-aisle-frontend\the_project_aisle_client\obj\Debug\the_project_aisle_client.Properties.Resources.resources
 C:\xampp\htdocs\the-project-aisle\03-basic-prototype-1\0-the-project-aisle-frontend\the_project_aisle_client\obj\Debug\the_project_aisle_client.csproj.GenerateResource.Cache
+C:\xampp\htdocs\the-project-aisle-hate-speech-analyzer\0-the-project-aisle-frontend\the_project_aisle_client\obj\Debug\the_project_aisle_client.exe
+C:\xampp\htdocs\the-project-aisle-hate-speech-analyzer\0-the-project-aisle-frontend\the_project_aisle_client\obj\Debug\the_project_aisle_client.pdb
