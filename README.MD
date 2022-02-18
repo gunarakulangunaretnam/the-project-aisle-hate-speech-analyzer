@@ -14,7 +14,7 @@ This system has manual and automatic processing methods. In the manual processin
 
 - Automatic social media post analyzation.
 - Top ten trending hate keywords.
-- It supports all languages (Unicode).
+- It supports Tamil and Sinhala languages (Unicode).
 - Good looking management panel.
 - Hate keywords could be inserted from the backend (management panel)
 - Social media accounts could be added from the backed.
@@ -55,6 +55,11 @@ This system has manual and automatic processing methods. In the manual processin
 ##### Step 02:
  - Host the Laravel backend management panel (1-the-project-aisle-backend).
 
+
+#### Login credentials of backend (Management Panel)
+
+- Username:- **admin**
+- Password:- **admin**
 
 ### Setup frontend
 
@@ -121,3 +126,108 @@ It will show all of the target social media accounts and pages in the bellow tab
 **Note:** By default, the system is ready perform manual processing. If you press **CTRL + C**, It will process the copied clipboard text in the background. However, in the manual processing user needs to scroll down and copy and copy. If user wants to process automatically without many involvement such as scrolling, press **CTRL + Q** to turn on the automatic processing method. In the automatic processing, no need to scroll, the system automatically handles all works. To turn of automatic mode, again press **CTRL + Q**.
 
 Note:- To turn on automatic processing mode: Press **CTRL + Q**
+
+
+## Backend Explained
+
+The backed management panel is the place where all of the social media data, hate keywords, contexts are stored and maintained.
+
+
+### Login page
+
+This is the login page of the system. Here, there is only one account that is admin account. The username and the password are given bellow.
+
+- Username:- **admin**
+- Password:- **admin**
+
+
+#### Features
+
+- Login function
+- Login Error popup messages
+
+![](github-readme-content/login-page.jpg)
+
+
+### Dashboard Homepage
+
+The dashboard homepage is the main analytics report board where admin can see all the accounts and hate keywords that involves hate speeches.
+
+#### Features
+- Shows top ten trending hate keywords.
+- Shows top ten hate speech spreaders (Account/Page)
+- Shows the number times a particular hate keyword is repeated.
+-  Shows reports for Tamil and Sinhala language separately.
+
+![](github-readme-content/home1.jpg)
+![](github-readme-content/home2.jpg)
+
+### Management Social Media
+
+This module is the place where the social media pages and accounts details are stored and maintained. These social media data are displayed in the C# (frontend) of the application, from there the user can select the social media to process.
+
+
+#### Features
+- Insert social media accounts and pages
+- Edit social media accounts and pages details
+- Delete social media accounts and pages.
+
+![](github-readme-content/management-social-media1.jpg)
+![](github-readme-content/management-social-media2.jpg)
+
+
+### Management Keyword
+
+This module is the place where the hate keywords are stored and maintained. This is the hate speech knowledgebase. When processing, the system looks for matches from this knowledgebase.
+
+
+#### Features
+- Insert hate keywords
+- Add tags of context
+- Delete hate keywords
+
+![](github-readme-content/management-keywords1.jpg)
+![](github-readme-content/management-keywords2.jpg)
+
+### Management Context
+
+Every hate keyword can go under categories of contexts that means some keywords are belongs to religion based hate speech, some are belongs to gender based, some are belongs to race and gender. Therefore, context defines the category.   
+
+
+#### Features
+- Insert contexts
+- Delete contexts
+
+![](github-readme-content/management-context1.jpg)
+![](github-readme-content/management-context2.jpg)
+
+
+### Analytics Rankings
+
+This is similar to top ten trending keywords and hate speech spreaders. This modules provide ranking for each social media accounts and pages based on the hate keywords that has used.  
+
+
+#### Features
+- Show ranking for trending keywords based on the number of times.
+- Show ranking for hate speech spreaders (Accounts / Pages)
+- Show ranking for Tamil and Sinhala
+
+![](github-readme-content/analytics-ranking1.jpg)
+![](github-readme-content/analytics-ranking2.jpg)
+
+
+### Settings User Settings
+
+This is settings page of the admin panel. It has only one function by now, that is changing password of admin account.
+
+![](github-readme-content/settings-user-settings.jpg)
+
+
+Any Questions? | Conduct Me
+---
+
+* [Linkedin Profile](https://www.linkedin.com/in/gunarakulan-gunaretnam-161119156/)
+* [Facebook Profile](https://www.facebook.com/gunarakulan)
+* [Twitter Profile](https://twitter.com/gunarakulang)
+* [Instagram Profile](https://www.instagram.com/gunarakulan_gunaretnam/)
+* [YouTube Channel](https://www.youtube.com/channel/UCMWkED5sabgVZSCKjZuRJXA/videos)
