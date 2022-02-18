@@ -50,18 +50,21 @@ def on_press(key):
         if processing_language.lower() == "tamil":
             
             for word in tamil_knowledgebase:
-                if word.strip() in target_text:
+                if word in target_text.strip().lower():
                     hate_words_list.append(word)
                     result = "[HATE]"
 
         elif processing_language.lower() == "sinhala":
 
             for word in sinhala_knowledgebase:
-                if word.strip() in target_text:
+                if word in target_text.strip().lower():
                     hate_words_list.append(word)
                     result = "[HATE]"
 
                 
+                
+
+
         current_date_object = datetime.today()
 
         current_date = current_date_object.strftime('%Y-%m-%d')
@@ -106,14 +109,15 @@ def database_loader():
     mydb.commit()
 
     for words in keyword_tamil_data:
-        tamil_knowledgebase.append(words[0])
+        tamil_knowledgebase.append(words[0].strip().lower())
 
     SelectDataCursor.execute("SELECT keyword FROM knowledgebase WHERE  language = 'Sinhala'")
     keyword_sinhala_data = SelectDataCursor.fetchall()
     mydb.commit()
 
     for words in keyword_sinhala_data:
-        sinhala_knowledgebase.append(words[0])
+        sinhala_knowledgebase.append(words[0].strip().lower())
+        
 
 
 def talk_function(audio):
@@ -160,16 +164,16 @@ def input_listener_from_csharp():
             print(e)
 
     
-def automatic_analyzer():
-    print("H")
-
+def key_listener():
+    with Listener(on_press=on_press) as listener:
+        listener.join()
 
 
 if __name__ == "__main__":
     thread1 = threading.Thread(target=input_listener_from_csharp, args=())
     thread1.start()
     database_loader()
-    automatic_analyzer()
+    key_listener()
     
 
 
