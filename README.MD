@@ -1,4 +1,4 @@
-# The Project Aisle Hate Speech Analyzer
+# The Project AISLE Hate Speech Analyzer
 
 ## Introduction
 
