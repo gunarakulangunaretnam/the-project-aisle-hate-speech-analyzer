@@ -1,4 +1,4 @@
-# THE PROJECT AISLE HATE SPEECH ANALYZER
+# The Project Aisle Hate Speech Analyzer
 
 ## Introduction
 
@@ -224,7 +224,7 @@ This is settings page of the admin panel. It has only one function by now, that 
 ![](github-readme-content/settings-user-settings.jpg)
 
 
-# CONTACT
+# Contact
 
 ### Website: 
 
